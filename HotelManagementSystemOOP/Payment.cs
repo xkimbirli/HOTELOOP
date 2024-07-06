@@ -72,80 +72,103 @@ namespace HotelManagementSystemOOP
 
         }
 
-        private void SavePayment_Click(object sender, EventArgs e)
-        {
-            // Debug message to confirm button click event
-            Console.WriteLine("Save button clicked.");
-
-            using (var con = new SQLiteConnection(cs))
+      
+          private void SavePayment_Click(object sender, EventArgs e)
             {
-                con.Open();
-                using (var cmd = new SQLiteCommand(con))
+                string discountCoupon = DiscountCoupon.Text.Trim();
+                string paymentMethod = PaymentMethodDDP.Text;
+                string paymentStatus = PaymetStatusDDP.Text;
+
+                // Validate required fields
+                if (string.IsNullOrWhiteSpace(paymentMethod) || string.IsNullOrWhiteSpace(paymentStatus))
                 {
-                    try
-                    {
-                        // Debug message to confirm database connection
-                        Console.WriteLine("Database connected.");
-
-                        cmd.CommandText = "INSERT INTO Payments(DiscountCoupon, PaymentMethod, PaymentStatus) " +
-                                          "VALUES (@discountcoupon, @paymentmethod, @paymentstatus)";
-
-                        cmd.Parameters.AddWithValue("@discountcoupon", DiscountCoupon.Text);
-                        cmd.Parameters.AddWithValue("@paymentmethod", PaymentMethodDDP.Text);
-                        cmd.Parameters.AddWithValue("@paymentstatus", PaymetStatusDDP.Text);
-
-                        cmd.ExecuteNonQuery();
-
-                        // Debug message to confirm successful execution
-                        Console.WriteLine("Data saved successfully.");
-                        MessageBox.Show("Data saved successfully.");
-                    }
-                    catch (Exception ex)
-                    {
-                        // Debug message to confirm exception
-                        Console.WriteLine("Error: " + ex.Message);
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
+                    MessageBox.Show("Payment Method and Payment Status cannot be empty.");
+                    return;
                 }
-            }
-            this.Close();
-        }
 
-        private void DiscountCoupon_TextChanged(object sender, EventArgs e)
-        {
-            string couponInput = DiscountCoupon.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(couponInput))
-            {
-                return; // Avoid unnecessary database calls when input is empty
-            }
-
-            using (var con = new SQLiteConnection(cs))
-            {
-                con.Open();
-
-                // Query to check if the discount coupon exists in the database
-                string query = "SELECT COUNT(*) FROM Discount WHERE DiscountCoupon = @couponInput";
-
-                using (var cmd = new SQLiteCommand(query, con))
+                using (var con = new SQLiteConnection(cs))
                 {
-                    cmd.Parameters.AddWithValue("@couponInput", couponInput);
+                    con.Open();
 
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    if (count > 0)
+                    // Check if the discount coupon exists in Discounts table
+                    if (!string.IsNullOrWhiteSpace(discountCoupon))
                     {
-                        // Coupon exists in the database
-                        MessageBox.Show("Discount coupon is valid!");
+                        string query = "SELECT Percentage FROM Discount WHERE DiscountCoupon = @discountcoupon";
+                        using (var cmd = new SQLiteCommand(query, con))
+                        {
+                            cmd.Parameters.AddWithValue("@discountcoupon", discountCoupon);
+
+                            object result = cmd.ExecuteScalar();
+                            if (result != null)
+                            {
+                                int accumulatedPercentage = Convert.ToInt32(result);
+                                MessageBox.Show($"You accumulated {accumulatedPercentage}%.");
+
+                                // Save the payment details including discount coupon
+                                using (var saveCmd = new SQLiteCommand(con))
+                                {
+                                    saveCmd.CommandText = "INSERT INTO Payments(DiscountCoupon, PaymentMethod, PaymentStatus) " +
+                                                          "VALUES (@discountcoupon, @paymentmethod, @paymentstatus)";
+                                    saveCmd.Parameters.AddWithValue("@discountcoupon", discountCoupon);
+                                    saveCmd.Parameters.AddWithValue("@paymentmethod", paymentMethod);
+                                    saveCmd.Parameters.AddWithValue("@paymentstatus", paymentStatus);
+
+                                    saveCmd.ExecuteNonQuery();
+                                    MessageBox.Show("Payment saved successfully.");
+                                }
+
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Discount coupon not found in database. Please enter a valid discount coupon.");
+                            }
+                        }
                     }
                     else
                     {
-                        // Coupon does not exist in the database
-                        MessageBox.Show("Invalid discount coupon.");
+                        MessageBox.Show("Please enter a discount coupon.");
                     }
                 }
             }
+
+        
+
+        private void DiscountCoupon_TextChanged(object sender, EventArgs e)
+        {
+            /* string couponInput = DiscountCoupon.Text.Trim();
+
+             if (string.IsNullOrWhiteSpace(couponInput))
+             {
+                 return; // Avoid unnecessary database calls when input is empty
+             }
+
+             using (var con = new SQLiteConnection(cs))
+             {
+                 con.Open();
+
+                 // Query to check if the discount coupon exists in the database
+                 string query = "SELECT COUNT(*) FROM Discount WHERE DiscountCoupon = @couponInput";
+
+                 using (var cmd = new SQLiteCommand(query, con))
+                 {
+                     cmd.Parameters.AddWithValue("@couponInput", couponInput);
+
+                     int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                     if (count > 0)
+                     {
+                         // Coupon exists in the database
+                         MessageBox.Show("Discount coupon is valid!");
+                     }
+                     else
+                     {
+                         // Coupon does not exist in the database
+                         MessageBox.Show("Invalid discount coupon.");
+                     }
+                 }
+             }
+         }*/
         }
-    }
-    
+    }  
 }

@@ -25,7 +25,8 @@ namespace HotelManagementSystemOOP
                     string selectQuery = @"SELECT g.Name, b.RoomNumber, b.CheckInDate, b.CheckOutDate 
                                            FROM Booking b 
                                            JOIN Guest g ON b.GuestID = g.GuestID
-                                           WHERE b.RoomType = 'Standard'";
+                                           JOIN Rooms r ON b.RoomNumber = r.RoomNumber
+                                           WHERE b.RoomType = 'Standard' AND r.RoomStatus = 'Occupied'";
 
                     using (var command = new SQLiteCommand(selectQuery, connection))
                     {

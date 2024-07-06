@@ -77,49 +77,56 @@ namespace HotelManagementSystemOOP
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["CheckoutButton"].Index)
             {
-                // Retrieve room information from the DataGridView
-                string roomNumber = dataGridView1.Rows[e.RowIndex].Cells["RoomNumber"].Value.ToString();
-                string roomType = "Deluxe"; // Assuming you have the RoomType available
+                // Prompt user for confirmation
+                DialogResult result = MessageBox.Show("Are you sure you want to check out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                try
+                if (result == DialogResult.Yes)
                 {
-                    using (var connection = new SQLiteConnection("Data Source=TOTOO.db"))
+                    // Retrieve room information from the DataGridView
+                    string roomNumber = dataGridView1.Rows[e.RowIndex].Cells["RoomNumber"].Value.ToString();
+                    string roomType = "Deluxe"; // Assuming you have the RoomType available
+
+                    try
                     {
-                        connection.Open();
-
-                        string updateQuery = @"UPDATE Rooms 
-                                      SET RoomStatus = 'Unclean' 
-                                      WHERE RoomNumber = @RoomNumber 
-                                      AND RoomType = @RoomType";
-
-                        using (var command = new SQLiteCommand(updateQuery, connection))
+                        using (var connection = new SQLiteConnection("Data Source=TOTOO.db"))
                         {
-                            command.Parameters.AddWithValue("@RoomNumber", roomNumber);
-                            command.Parameters.AddWithValue("@RoomType", roomType);
-                            command.ExecuteNonQuery();
+                            connection.Open();
+
+                            string updateQuery = @"UPDATE Rooms 
+                                          SET RoomStatus = 'Unclean' 
+                                          WHERE RoomNumber = @RoomNumber 
+                                          AND RoomType = @RoomType";
+
+                            using (var command = new SQLiteCommand(updateQuery, connection))
+                            {
+                                command.Parameters.AddWithValue("@RoomNumber", roomNumber);
+                                command.Parameters.AddWithValue("@RoomType", roomType);
+                                command.ExecuteNonQuery();
+                            }
                         }
+
+                        // Remove row from DataGridView
+                        dataGridView1.Rows.RemoveAt(e.RowIndex);
+
+                        // Navigate to the Invoice form or another form
+                        Invoice invoice = new Invoice(this); // Pass any necessary parameters
+                        invoice.Show(); // Show the form
+
+                        // Close the current form (DeluxeRoomBookedListTab UserControl)
+                        Form parentForm = this.FindForm();
+                        parentForm.Close();
                     }
-
-                    // Remove row from DataGridView
-                    dataGridView1.Rows.RemoveAt(e.RowIndex);
-
-                    // Navigate to the Invoice form or another form
-                    Invoice invoice = new Invoice(this); // Pass any necessary parameters
-                    invoice.Show(); // Show the form
-
-                    // Close the current form (StandardRoomBookedListTab UserControl)
-                    Form parentForm = this.FindForm();
-                    parentForm.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["ExtendButton"].Index)
             {
                 // Handle extension button action here
             }
+
         }
     }
 }
