@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashboard));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashboard));
             FastReport.DataVisualization.Charting.ChartArea chartArea1 = new FastReport.DataVisualization.Charting.ChartArea();
             FastReport.DataVisualization.Charting.Series series1 = new FastReport.DataVisualization.Charting.Series();
             SearchBarSD = new System.Windows.Forms.TextBox();
@@ -91,8 +91,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = System.Drawing.Color.Black;
-            panel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             panel1.Controls.Add(NewBooking);
             panel1.Controls.Add(NewBookingTodayNumber);
@@ -119,8 +118,8 @@
             NewBookingTodayNumber.AutoSize = true;
             NewBookingTodayNumber.BackColor = System.Drawing.Color.Transparent;
             NewBookingTodayNumber.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            NewBookingTodayNumber.ForeColor = System.Drawing.Color.Magenta;
-            NewBookingTodayNumber.Location = new System.Drawing.Point(68, 22);
+            NewBookingTodayNumber.ForeColor = System.Drawing.Color.White;
+            NewBookingTodayNumber.Location = new System.Drawing.Point(70, 22);
             NewBookingTodayNumber.Name = "NewBookingTodayNumber";
             NewBookingTodayNumber.Size = new System.Drawing.Size(68, 27);
             NewBookingTodayNumber.TabIndex = 1;
@@ -132,8 +131,8 @@
             ArrvingTodayNumber.AutoSize = true;
             ArrvingTodayNumber.BackColor = System.Drawing.Color.Transparent;
             ArrvingTodayNumber.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            ArrvingTodayNumber.ForeColor = System.Drawing.Color.Magenta;
-            ArrvingTodayNumber.Location = new System.Drawing.Point(68, 21);
+            ArrvingTodayNumber.ForeColor = System.Drawing.Color.White;
+            ArrvingTodayNumber.Location = new System.Drawing.Point(78, 21);
             ArrvingTodayNumber.Name = "ArrvingTodayNumber";
             ArrvingTodayNumber.Size = new System.Drawing.Size(68, 27);
             ArrvingTodayNumber.TabIndex = 0;
@@ -142,8 +141,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = System.Drawing.Color.Black;
-            panel2.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             panel2.Controls.Add(ArrivingToday);
             panel2.Controls.Add(ArrvingTodayNumber);
@@ -159,7 +157,7 @@
             ArrivingToday.BackColor = System.Drawing.Color.Transparent;
             ArrivingToday.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ArrivingToday.ForeColor = System.Drawing.Color.White;
-            ArrivingToday.Location = new System.Drawing.Point(40, 60);
+            ArrivingToday.Location = new System.Drawing.Point(49, 60);
             ArrivingToday.Name = "ArrivingToday";
             ArrivingToday.Size = new System.Drawing.Size(127, 21);
             ArrivingToday.TabIndex = 3;
@@ -168,8 +166,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = System.Drawing.Color.Black;
-            panel3.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             panel3.Controls.Add(CurrentlyStaying);
             panel3.Controls.Add(CurrentStaying);
@@ -198,7 +195,7 @@
             CurrentStaying.AutoSize = true;
             CurrentStaying.BackColor = System.Drawing.Color.Transparent;
             CurrentStaying.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            CurrentStaying.ForeColor = System.Drawing.Color.Magenta;
+            CurrentStaying.ForeColor = System.Drawing.Color.White;
             CurrentStaying.Location = new System.Drawing.Point(70, 21);
             CurrentStaying.Name = "CurrentStaying";
             CurrentStaying.Size = new System.Drawing.Size(68, 27);
@@ -220,8 +217,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = System.Drawing.Color.Black;
-            panel4.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel4.BackgroundImage");
+            panel4.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             panel4.Controls.Add(DepartingToday);
             panel4.Controls.Add(DepartingTodayNumber);
@@ -248,7 +244,7 @@
             DepartingTodayNumber.AutoSize = true;
             DepartingTodayNumber.BackColor = System.Drawing.Color.Transparent;
             DepartingTodayNumber.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            DepartingTodayNumber.ForeColor = System.Drawing.Color.Magenta;
+            DepartingTodayNumber.ForeColor = System.Drawing.Color.White;
             DepartingTodayNumber.Location = new System.Drawing.Point(76, 21);
             DepartingTodayNumber.Name = "DepartingTodayNumber";
             DepartingTodayNumber.Size = new System.Drawing.Size(68, 27);
@@ -258,7 +254,7 @@
             // 
             // ArrvingListPanelSD
             // 
-            ArrvingListPanelSD.BackColor = System.Drawing.Color.Gainsboro;
+            ArrvingListPanelSD.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             ArrvingListPanelSD.Controls.Add(panel5);
             ArrvingListPanelSD.Controls.Add(flowLayoutPanel1);
             ArrvingListPanelSD.Location = new System.Drawing.Point(16, 221);
@@ -281,8 +277,10 @@
             // 
             // TodaysArrivingLabel
             // 
+            TodaysArrivingLabel.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             TodaysArrivingLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             TodaysArrivingLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            TodaysArrivingLabel.ForeColor = System.Drawing.Color.White;
             TodaysArrivingLabel.Location = new System.Drawing.Point(0, 0);
             TodaysArrivingLabel.Name = "TodaysArrivingLabel";
             TodaysArrivingLabel.Size = new System.Drawing.Size(930, 75);
@@ -303,6 +301,7 @@
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
@@ -360,8 +359,7 @@
             // 
             // HotelInfoViewbuttonDB
             // 
-            HotelInfoViewbuttonDB.BackColor = System.Drawing.Color.White;
-            HotelInfoViewbuttonDB.BackgroundImage = (System.Drawing.Image)resources.GetObject("HotelInfoViewbuttonDB.BackgroundImage");
+            HotelInfoViewbuttonDB.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             HotelInfoViewbuttonDB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             HotelInfoViewbuttonDB.FlatAppearance.BorderSize = 0;
             HotelInfoViewbuttonDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -378,6 +376,7 @@
             // 
             HotelNameLabel.AutoSize = true;
             HotelNameLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            HotelNameLabel.ForeColor = System.Drawing.Color.White;
             HotelNameLabel.Location = new System.Drawing.Point(18, 23);
             HotelNameLabel.Name = "HotelNameLabel";
             HotelNameLabel.Size = new System.Drawing.Size(248, 37);
@@ -436,7 +435,8 @@
             // 
             // button1
             // 
-            button1.BackColor = System.Drawing.Color.Black;
+            button1.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button1.ForeColor = System.Drawing.Color.White;
@@ -451,6 +451,9 @@
             // 
             // chart1
             // 
+            chart1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
+            chart1.BorderlineColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             chartArea1.InnerPlotPosition.Auto = false;
             chartArea1.InnerPlotPosition.Height = 95F;
             chartArea1.InnerPlotPosition.Width = 89.23778F;
@@ -480,7 +483,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.White;
+            BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             ClientSize = new System.Drawing.Size(1323, 868);
             Controls.Add(chart1);
             Controls.Add(button1);

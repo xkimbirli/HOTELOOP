@@ -27,6 +27,8 @@ namespace HotelManagementSystemOOP
             InitializeComponent();
             InitializeNavigationControl();
             InitializeNavigationButtons();
+
+            
         }
 
         private StaffDashboard staffDashboard;
@@ -130,7 +132,7 @@ namespace HotelManagementSystemOOP
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-          
+
         }
         private void DisplayLatestHotelLogo()
         {
@@ -183,6 +185,11 @@ namespace HotelManagementSystemOOP
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchBarBP_TextChanged(object sender, EventArgs e)
         {
 
         }

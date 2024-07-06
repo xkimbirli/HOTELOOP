@@ -7,6 +7,7 @@ namespace NavigationView
     {
         private List<UserControl> userControlList;
         private Panel panel;
+        private UserControl currentControl;
 
         public NavigationControl(List<UserControl> userControlList, Panel panel)
         {

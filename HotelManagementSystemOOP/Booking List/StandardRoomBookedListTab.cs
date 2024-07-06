@@ -8,10 +8,13 @@ namespace HotelManagementSystemOOP
 {
     public partial class StandardRoomBookedListTab : UserControl
     {
+        private DataTable dataTable; // Declare dataTable at the class level
+
         public StandardRoomBookedListTab()
         {
             InitializeComponent();
             dataGridView1.CellFormatting += DataGridView1_CellFormatting;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
         }
 
         private void StandardRoomBookedListTab_Load(object sender, EventArgs e)
@@ -26,17 +29,18 @@ namespace HotelManagementSystemOOP
                                            FROM Booking b 
                                            JOIN Guest g ON b.GuestID = g.GuestID
                                            JOIN Rooms r ON b.RoomNumber = r.RoomNumber
-                                           WHERE b.RoomType = 'Standard' AND r.RoomStatus = 'Occupied'";
+                                           WHERE b.RoomType = 'Standard' 
+                                             AND r.RoomStatus = 'Occupied'
+                                             AND b.Status = 'Arrived'";
 
                     using (var command = new SQLiteCommand(selectQuery, connection))
                     {
                         using (var adapter = new SQLiteDataAdapter(command))
                         {
-                            DataTable dataTable = new DataTable();
+                            dataTable = new DataTable();
                             adapter.Fill(dataTable);
 
-                            // Automatically generate columns
-                            dataGridView1.AutoGenerateColumns = true;
+                            // Set DataGridView DataSource to dataTable
                             dataGridView1.DataSource = dataTable;
 
                             // Optionally, set column headers
@@ -85,13 +89,13 @@ namespace HotelManagementSystemOOP
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["CheckoutButton"].Index)
+            if (e.RowIndex >= 0 && dataGridView1.Columns["CheckoutButton"] != null && e.ColumnIndex == dataGridView1.Columns["CheckoutButton"].Index)
             {
                 // Retrieve room information from the DataGridView
-                string roomNumber = dataGridView1.Rows[e.RowIndex].Cells["RoomNumber"].Value.ToString();
-                string guestName = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-                string checkInDate = dataGridView1.Rows[e.RowIndex].Cells["CheckInDate"].Value.ToString();
-                string checkOutDate = dataGridView1.Rows[e.RowIndex].Cells["CheckOutDate"].Value.ToString();
+                string roomNumber = dataGridView1.Rows[e.RowIndex].Cells["RoomNumber"].Value?.ToString();
+                string guestName = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
+                string checkInDate = dataGridView1.Rows[e.RowIndex].Cells["CheckInDate"].Value?.ToString();
+                string checkOutDate = dataGridView1.Rows[e.RowIndex].Cells["CheckOutDate"].Value?.ToString();
                 string roomType = "Standard"; // Set correct room type
 
                 try
@@ -100,15 +104,31 @@ namespace HotelManagementSystemOOP
                     {
                         connection.Open();
 
-                        string updateQuery = @"UPDATE Rooms 
-                              SET RoomStatus = 'Unclean' 
-                              WHERE RoomNumber = @RoomNumber 
-                              AND RoomType = @RoomType";
+                        // Update RoomStatus in Rooms table
+                        string updateRoomStatusQuery = @"UPDATE Rooms 
+                                                         SET RoomStatus = 'Unclean' 
+                                                         WHERE RoomNumber = @RoomNumber 
+                                                         AND RoomType = @RoomType";
 
-                        using (var command = new SQLiteCommand(updateQuery, connection))
+                        using (var command = new SQLiteCommand(updateRoomStatusQuery, connection))
                         {
                             command.Parameters.AddWithValue("@RoomNumber", roomNumber);
                             command.Parameters.AddWithValue("@RoomType", roomType);
+                            command.ExecuteNonQuery();
+                        }
+
+                        // Update Status in Booking table
+                        string updateBookingStatusQuery = @"UPDATE Booking 
+                                                            SET Status = 'CheckOut' 
+                                                            WHERE RoomNumber = @RoomNumber 
+                                                            AND RoomType = @RoomType 
+                                                            ";
+
+                        using (var command = new SQLiteCommand(updateBookingStatusQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@RoomNumber", roomNumber);
+                            command.Parameters.AddWithValue("@RoomType", roomType);
+                            command.Parameters.AddWithValue("@GuestName", guestName);
                             command.ExecuteNonQuery();
                         }
                     }
@@ -126,12 +146,62 @@ namespace HotelManagementSystemOOP
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["ExtendButton"].Index)
+            else if (e.RowIndex >= 0 && dataGridView1.Columns["ExtendButton"] != null && e.ColumnIndex == dataGridView1.Columns["ExtendButton"].Index)
             {
                 // Handle extension button action here
             }
         }
 
+        public void PerformSearch(string guestName, string roomNumber)
+        {
+            try
+            {
+                DataTable filteredTable = dataTable.Copy(); // Create a copy to avoid modifying original data
+                filteredTable.DefaultView.RowFilter = $"Name LIKE '%{guestName}%' AND RoomNumber LIKE '%{roomNumber}%'";
+                dataGridView1.DataSource = filteredTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            FilterData(textBox1.Text.Trim().ToLower());
+        }
+
+        private void FilterData(string searchTerm)
+        {
+            try
+            {
+                if (dataTable != null)
+                {
+                    DataTable filteredTable = dataTable.Clone(); // Create a clone of the structure without data
+
+                    // Filter rows based on guest name or room number
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        if (row["Name"].ToString().ToLower().Contains(searchTerm) ||
+                            row["RoomNumber"].ToString().ToLower().Contains(searchTerm))
+                        {
+                            filteredTable.ImportRow(row); // Import matching rows to the new table
+                        }
+                    }
+
+                    dataGridView1.DataSource = filteredTable;
+
+                    // If no results found, show an empty DataTable
+                    if (filteredTable.Rows.Count == 0)
+                    {
+                        dataGridView1.DataSource = null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

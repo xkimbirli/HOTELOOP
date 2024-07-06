@@ -100,7 +100,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             ClientSize = new System.Drawing.Size(1323, 868);
             Controls.Add(pictureBox1);
             Controls.Add(PasswordLogIn);

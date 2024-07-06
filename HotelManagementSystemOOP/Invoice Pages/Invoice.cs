@@ -6,6 +6,7 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -106,6 +107,7 @@ namespace HotelManagementSystemOOP
 
         private void Invoice_Load(object sender, EventArgs e)
         {
+            LoadInvoiceData();
             Load_Tax();
         }
 
@@ -154,89 +156,29 @@ namespace HotelManagementSystemOOP
         {
             this.Close();
         }
-        public void LoadInvoiceData(int bookingID)
+        public void LoadInvoiceData()
         {
             try
             {
                 con.Open();
 
-                // Query to fetch Hotel information
-                string hotelQuery = "SELECT CompanyName, Location, ContactNumber, EmailAddress " +
-                                    "FROM Hotel " +
-                                    "WHERE HotelID = (SELECT HotelID FROM Booking WHERE BookingID = @BookingID)";
+                string selectQuery = "SELECT CompanyName, Location, ContactNumber, EmailAddress " +
+                                     "FROM Hotel";
 
-                using (var hotelCommand = new SQLiteCommand(hotelQuery, con))
+                using (var command = new SQLiteCommand(selectQuery, con))
                 {
-                    hotelCommand.Parameters.AddWithValue("@BookingID", bookingID);
-                    using (var hotelReader = hotelCommand.ExecuteReader())
+                    using (var reader = command.ExecuteReader())
                     {
-                        if (hotelReader.Read())
+                        if (reader.Read())
                         {
-                            CompanyName.Text = hotelReader["CompanyName"].ToString();
-                            Address.Text = hotelReader["Location"].ToString();
-                            PhoneNumber.Text = hotelReader["ContactNumber"].ToString();
-                            Email.Text = hotelReader["EmailAddress"].ToString();
+                            // Assuming CompanyName, Location, ContactNumber, and EmailAddress are in the same order as fetched
+                            CompanyName.Text = reader["CompanyName"].ToString();
+                            Address.Text = reader["Location"].ToString();
+                            PhoneNumber.Text = reader["ContactNumber"].ToString();
+                            Email.Text = reader["EmailAddress"].ToString();
                         }
                     }
                 }
-
-
-                // Query to fetch Booking information
-                string guestQuery = "SELECT Name, Contact, Email, NumberOfAdults, NumberOfKids " +
-                    "FROM Guest " +
-                    "WHERE GuestID = (SELECT GuestID FROM Booking WHERE BookingID = @BookingID)";
-
-                using (var guestCommand = new SQLiteCommand(guestQuery, con))
-                {
-                    guestCommand.Parameters.AddWithValue("@BookingID", bookingID);
-                    using (var guestReader = guestCommand.ExecuteReader())
-                    {
-                        if (guestReader.Read())
-                        {
-                            GuestName.Text = guestReader["Name"].ToString();
-                            GuestPhoneNumber.Text = guestReader["Contact"].ToString();
-                            GuestEmail.Text = guestReader["Email"].ToString();
-                            GuestAdultNum.Text = guestReader["NumberOfAdults"].ToString();
-                            GuestKidsNum.Text = guestReader["NumberOfKids"].ToString();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No guest information found for the provided BookingID.");
-                        }
-                    }
-                }
-                // Query to fetch Payment information
-                /*string paymentQuery = "SELECT PaymentStatus, PaymentMethod FROM Payments WHERE BookingID = @BookingID";
-                using (var paymentCommand = new SQLiteCommand(paymentQuery, con))
-                {
-                    paymentCommand.Parameters.AddWithValue("@BookingID", bookingID);
-                    using (var paymentReader = paymentCommand.ExecuteReader())
-                    {
-                        if (paymentReader.Read())
-                        {
-                            PaymentStatus.Text = paymentReader["PaymentStatus"].ToString();
-                            PaymentMehod.Text = paymentReader["PaymentMethod"].ToString();
-                        }
-                    }
-                }
-
-                // Query to fetch Discount information
-                string discountQuery = "SELECT d.Percentage " +
-                                       "FROM Discount d " +
-                                       "JOIN Booking b ON d.DiscountID = b.DiscountID " +
-                                       "WHERE b.BookingID = @BookingID";
-
-                using (var discountCommand = new SQLiteCommand(discountQuery, con))
-                {
-                    discountCommand.Parameters.AddWithValue("@BookingID", bookingID);
-                    using (var discountReader = discountCommand.ExecuteReader())
-                    {
-                        if (discountReader.Read())
-                        {
-                            Discount.Text = discountReader["Percentage"].ToString();
-                        }
-                    }
-                }*/
             }
             catch (Exception ex)
             {
@@ -247,6 +189,7 @@ namespace HotelManagementSystemOOP
                 con.Close();
             }
         }
+
 
         private void GuestAdultNum_Click(object sender, EventArgs e)
         {
@@ -263,6 +206,11 @@ namespace HotelManagementSystemOOP
             StaffDashboard staffdashboard = new StaffDashboard(this);
             staffdashboard.Show();
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

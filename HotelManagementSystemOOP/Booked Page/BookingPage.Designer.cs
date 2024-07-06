@@ -64,6 +64,7 @@
             SearchBarBP.Size = new System.Drawing.Size(406, 35);
             SearchBarBP.TabIndex = 2;
             SearchBarBP.Text = "search..";
+            SearchBarBP.TextChanged += SearchBarBP_TextChanged;
             // 
             // DisplayPanelBP
             // 

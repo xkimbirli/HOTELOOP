@@ -34,9 +34,13 @@ namespace HotelManagementSystemOOP
             {
                 sqlite.Open();
                 string sql = "CREATE TABLE IF NOT EXISTS Payments(" +
-                             "DiscountCoupon VARCHAR(50), " +
-                             "PaymentMethod VARCHAR(20), " +
-                             "PaymentStatus VARCHAR(20))";
+                              "PaymentID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                              "BookingID INTEGER, " +
+                              "DiscountID INTEGER, " +
+                              "DiscountCoupon VARCHAR(50), " +
+                              "PaymentMethod VARCHAR(20), " +
+                              "PaymentStatus VARCHAR(20), " +
+                              "FOREIGN KEY(BookingID) REFERENCES Booking(BookingID))";
                 SQLiteCommand command = new SQLiteCommand(sql, sqlite);
                 command.ExecuteNonQuery();
             }
@@ -72,67 +76,81 @@ namespace HotelManagementSystemOOP
 
         }
 
-      
-          private void SavePayment_Click(object sender, EventArgs e)
+
+        private void SavePayment_Click(object sender, EventArgs e)
+        {
+            string discountCoupon = DiscountCoupon.Text.Trim();
+            string paymentMethod = PaymentMethodDDP.Text;
+            string paymentStatus = PaymetStatusDDP.Text;
+
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(paymentMethod) || string.IsNullOrWhiteSpace(paymentStatus))
             {
-                string discountCoupon = DiscountCoupon.Text.Trim();
-                string paymentMethod = PaymentMethodDDP.Text;
-                string paymentStatus = PaymetStatusDDP.Text;
-
-                // Validate required fields
-                if (string.IsNullOrWhiteSpace(paymentMethod) || string.IsNullOrWhiteSpace(paymentStatus))
-                {
-                    MessageBox.Show("Payment Method and Payment Status cannot be empty.");
-                    return;
-                }
-
-                using (var con = new SQLiteConnection(cs))
-                {
-                    con.Open();
-
-                    // Check if the discount coupon exists in Discounts table
-                    if (!string.IsNullOrWhiteSpace(discountCoupon))
-                    {
-                        string query = "SELECT Percentage FROM Discount WHERE DiscountCoupon = @discountcoupon";
-                        using (var cmd = new SQLiteCommand(query, con))
-                        {
-                            cmd.Parameters.AddWithValue("@discountcoupon", discountCoupon);
-
-                            object result = cmd.ExecuteScalar();
-                            if (result != null)
-                            {
-                                int accumulatedPercentage = Convert.ToInt32(result);
-                                MessageBox.Show($"You accumulated {accumulatedPercentage}%.");
-
-                                // Save the payment details including discount coupon
-                                using (var saveCmd = new SQLiteCommand(con))
-                                {
-                                    saveCmd.CommandText = "INSERT INTO Payments(DiscountCoupon, PaymentMethod, PaymentStatus) " +
-                                                          "VALUES (@discountcoupon, @paymentmethod, @paymentstatus)";
-                                    saveCmd.Parameters.AddWithValue("@discountcoupon", discountCoupon);
-                                    saveCmd.Parameters.AddWithValue("@paymentmethod", paymentMethod);
-                                    saveCmd.Parameters.AddWithValue("@paymentstatus", paymentStatus);
-
-                                    saveCmd.ExecuteNonQuery();
-                                    MessageBox.Show("Payment saved successfully.");
-                                }
-
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Discount coupon not found in database. Please enter a valid discount coupon.");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please enter a discount coupon.");
-                    }
-                }
+                MessageBox.Show("Payment Method and Payment Status cannot be empty.");
+                return;
             }
 
-        
+            using (var con = new SQLiteConnection(cs))
+            {
+                con.Open();
+
+                // Retrieve the most recent BookingID
+                long bookingId;
+                using (var cmd = new SQLiteCommand("SELECT BookingID FROM Booking ORDER BY BookingID DESC LIMIT 1", con))
+                {
+                    object result = cmd.ExecuteScalar();
+                    if (result == null)
+                    {
+                        MessageBox.Show("No booking found.");
+                        return;
+                    }
+                    bookingId = (long)result;
+                }
+
+                // Check if the discount coupon exists in Discounts table
+                if (!string.IsNullOrWhiteSpace(discountCoupon))
+                {
+                    string query = "SELECT Percentage FROM Discount WHERE DiscountCoupon = @discountcoupon";
+                    using (var cmd = new SQLiteCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@discountcoupon", discountCoupon);
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            int accumulatedPercentage = Convert.ToInt32(result);
+                            MessageBox.Show($"You accumulated {accumulatedPercentage}%.");
+
+                            // Save the payment details including discount coupon
+                            using (var saveCmd = new SQLiteCommand(con))
+                            {
+                                saveCmd.CommandText = "INSERT INTO Payments(BookingID, DiscountCoupon, PaymentMethod, PaymentStatus) " +
+                                                      "VALUES (@bookingid, @discountcoupon, @paymentmethod, @paymentstatus)";
+                                saveCmd.Parameters.AddWithValue("@bookingid", bookingId);
+                                saveCmd.Parameters.AddWithValue("@discountcoupon", discountCoupon);
+                                saveCmd.Parameters.AddWithValue("@paymentmethod", paymentMethod);
+                                saveCmd.Parameters.AddWithValue("@paymentstatus", paymentStatus);
+
+                                saveCmd.ExecuteNonQuery();
+                                MessageBox.Show("Payment saved successfully.");
+                            }
+
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Discount coupon not found in database. Please enter a valid discount coupon.");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a discount coupon.");
+                }
+            }
+        }
+
+
 
         private void DiscountCoupon_TextChanged(object sender, EventArgs e)
         {
@@ -170,5 +188,5 @@ namespace HotelManagementSystemOOP
              }
          }*/
         }
-    }  
+    }
 }

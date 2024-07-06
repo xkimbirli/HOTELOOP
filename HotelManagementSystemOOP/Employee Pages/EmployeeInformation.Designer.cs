@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeInformation));
-            textBox1 = new System.Windows.Forms.TextBox();
+            Search = new System.Windows.Forms.TextBox();
             dataGridView1 = new System.Windows.Forms.DataGridView();
             label1 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -39,15 +39,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // Search
             // 
-            textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            textBox1.Location = new System.Drawing.Point(21, 102);
-            textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(348, 28);
-            textBox1.TabIndex = 13;
+            Search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            Search.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            Search.Location = new System.Drawing.Point(21, 102);
+            Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Search.Name = "Search";
+            Search.Size = new System.Drawing.Size(348, 28);
+            Search.TabIndex = 13;
             // 
             // dataGridView1
             // 
@@ -57,7 +57,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new System.Drawing.Size(427, 644);
+            dataGridView1.Size = new System.Drawing.Size(907, 644);
             dataGridView1.TabIndex = 14;
             // 
             // label1
@@ -87,7 +87,7 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             button1.ForeColor = System.Drawing.Color.White;
-            button1.Location = new System.Drawing.Point(755, 25);
+            button1.Location = new System.Drawing.Point(747, 25);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(52, 35);
             button1.TabIndex = 18;
@@ -102,7 +102,7 @@
             DashboardButtonEI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             DashboardButtonEI.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             DashboardButtonEI.ForeColor = System.Drawing.Color.White;
-            DashboardButtonEI.Location = new System.Drawing.Point(815, 25);
+            DashboardButtonEI.Location = new System.Drawing.Point(808, 25);
             DashboardButtonEI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             DashboardButtonEI.Name = "DashboardButtonEI";
             DashboardButtonEI.Size = new System.Drawing.Size(112, 35);
@@ -123,7 +123,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
-            Controls.Add(textBox1);
+            Controls.Add(Search);
             Controls.Add(DashboardButtonEI);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -139,7 +139,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Search;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -32,7 +32,6 @@ namespace HotelManagementSystemOOP
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingList));
             MenuBookPageBL = new System.Windows.Forms.Button();
-            SearchBarBP = new System.Windows.Forms.TextBox();
             panel2 = new System.Windows.Forms.Panel();
             panel3 = new System.Windows.Forms.Panel();
             DeluxeRoomTabRC = new System.Windows.Forms.Button();
@@ -42,7 +41,6 @@ namespace HotelManagementSystemOOP
             pictureBox2 = new System.Windows.Forms.PictureBox();
             MenuDashboardBL = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
-            monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -66,26 +64,12 @@ namespace HotelManagementSystemOOP
             MenuBookPageBL.UseVisualStyleBackColor = false;
             MenuBookPageBL.Click += MenuDashboardButtonRC_Click;
             // 
-            // SearchBarBP
-            // 
-            SearchBarBP.AcceptsReturn = true;
-            SearchBarBP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            SearchBarBP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            SearchBarBP.Location = new System.Drawing.Point(597, 36);
-            SearchBarBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            SearchBarBP.MaximumSize = new System.Drawing.Size(500, 35);
-            SearchBarBP.MinimumSize = new System.Drawing.Size(2, 35);
-            SearchBarBP.Name = "SearchBarBP";
-            SearchBarBP.Size = new System.Drawing.Size(352, 35);
-            SearchBarBP.TabIndex = 10;
-            SearchBarBP.Text = "search..";
-            // 
             // panel2
             // 
-            panel2.Location = new System.Drawing.Point(23, 146);
+            panel2.Location = new System.Drawing.Point(23, 174);
             panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(927, 687);
+            panel2.Size = new System.Drawing.Size(1268, 659);
             panel2.TabIndex = 12;
             panel2.Paint += panel2_Paint;
             // 
@@ -95,10 +79,10 @@ namespace HotelManagementSystemOOP
             panel3.Controls.Add(DeluxeRoomTabRC);
             panel3.Controls.Add(SuiteRoomRC);
             panel3.Controls.Add(StandardRoomTabRC);
-            panel3.Location = new System.Drawing.Point(22, 91);
+            panel3.Location = new System.Drawing.Point(20, 117);
             panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(928, 58);
+            panel3.Size = new System.Drawing.Size(377, 58);
             panel3.TabIndex = 0;
             panel3.Paint += panel3_Paint;
             // 
@@ -109,10 +93,10 @@ namespace HotelManagementSystemOOP
             DeluxeRoomTabRC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             DeluxeRoomTabRC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             DeluxeRoomTabRC.ForeColor = System.Drawing.Color.White;
-            DeluxeRoomTabRC.Location = new System.Drawing.Point(319, 6);
+            DeluxeRoomTabRC.Location = new System.Drawing.Point(138, 6);
             DeluxeRoomTabRC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             DeluxeRoomTabRC.Name = "DeluxeRoomTabRC";
-            DeluxeRoomTabRC.Size = new System.Drawing.Size(290, 48);
+            DeluxeRoomTabRC.Size = new System.Drawing.Size(114, 43);
             DeluxeRoomTabRC.TabIndex = 2;
             DeluxeRoomTabRC.Text = "DELUXE";
             DeluxeRoomTabRC.UseVisualStyleBackColor = false;
@@ -125,10 +109,10 @@ namespace HotelManagementSystemOOP
             SuiteRoomRC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SuiteRoomRC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             SuiteRoomRC.ForeColor = System.Drawing.Color.White;
-            SuiteRoomRC.Location = new System.Drawing.Point(632, 2);
+            SuiteRoomRC.Location = new System.Drawing.Point(266, 6);
             SuiteRoomRC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             SuiteRoomRC.Name = "SuiteRoomRC";
-            SuiteRoomRC.Size = new System.Drawing.Size(290, 55);
+            SuiteRoomRC.Size = new System.Drawing.Size(106, 46);
             SuiteRoomRC.TabIndex = 3;
             SuiteRoomRC.Text = "SUITE";
             SuiteRoomRC.UseVisualStyleBackColor = false;
@@ -141,10 +125,10 @@ namespace HotelManagementSystemOOP
             StandardRoomTabRC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             StandardRoomTabRC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             StandardRoomTabRC.ForeColor = System.Drawing.Color.White;
-            StandardRoomTabRC.Location = new System.Drawing.Point(1, 4);
+            StandardRoomTabRC.Location = new System.Drawing.Point(14, 9);
             StandardRoomTabRC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             StandardRoomTabRC.Name = "StandardRoomTabRC";
-            StandardRoomTabRC.Size = new System.Drawing.Size(290, 50);
+            StandardRoomTabRC.Size = new System.Drawing.Size(112, 41);
             StandardRoomTabRC.TabIndex = 1;
             StandardRoomTabRC.Text = "STANDARD";
             StandardRoomTabRC.UseVisualStyleBackColor = false;
@@ -165,9 +149,9 @@ namespace HotelManagementSystemOOP
             // 
             pictureBox2.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Location = new System.Drawing.Point(994, 28);
+            pictureBox2.Location = new System.Drawing.Point(1125, 18);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(297, 220);
+            pictureBox2.Size = new System.Drawing.Size(159, 82);
             pictureBox2.TabIndex = 17;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
@@ -205,13 +189,6 @@ namespace HotelManagementSystemOOP
             button1.TabIndex = 19;
             button1.UseVisualStyleBackColor = false;
             // 
-            // monthCalendar1
-            // 
-            monthCalendar1.Location = new System.Drawing.Point(1015, 284);
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.TabIndex = 20;
-            monthCalendar1.DateChanged += monthCalendar1_DateChanged;
-            // 
             // BookingList
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -219,7 +196,6 @@ namespace HotelManagementSystemOOP
             BackColor = System.Drawing.Color.White;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             ClientSize = new System.Drawing.Size(1323, 868);
-            Controls.Add(monthCalendar1);
             Controls.Add(button1);
             Controls.Add(MenuDashboardBL);
             Controls.Add(pictureBox2);
@@ -227,7 +203,6 @@ namespace HotelManagementSystemOOP
             Controls.Add(pictureBox1);
             Controls.Add(MenuBookPageBL);
             Controls.Add(panel2);
-            Controls.Add(SearchBarBP);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             MaximumSize = new System.Drawing.Size(1341, 915);
@@ -239,7 +214,6 @@ namespace HotelManagementSystemOOP
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         private void MenuRoomButtonBL_Click(
@@ -249,7 +223,6 @@ namespace HotelManagementSystemOOP
         private System.Windows.Forms.Button MenuRoomButtonBL;
         private System.Windows.Forms.Button MenuBookingButtonBL;
         private System.Windows.Forms.Button MenuBookPageBL;
-        private System.Windows.Forms.TextBox SearchBarBP;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button SuiteRoomRC;
@@ -259,7 +232,6 @@ namespace HotelManagementSystemOOP
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button MenuDashboardBL;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

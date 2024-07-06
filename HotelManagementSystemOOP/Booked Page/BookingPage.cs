@@ -44,7 +44,7 @@ namespace HotelManagementSystemOOP
             InitializeNavigationControl();
             InitializeNavigationButtons();
         }
-        
+
         private void InitializeNavigationControl()
         {
             List<UserControl> userControls = new List<UserControl>()
@@ -241,7 +241,7 @@ namespace HotelManagementSystemOOP
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+
         }
 
 
@@ -255,6 +255,11 @@ namespace HotelManagementSystemOOP
             RoomInfos roomInfos = new RoomInfos(this);
             roomInfos.Show();
             this.Close();
+        }
+
+        private void SearchBarBP_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

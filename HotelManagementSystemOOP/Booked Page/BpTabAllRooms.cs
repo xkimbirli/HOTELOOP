@@ -88,5 +88,26 @@ namespace HotelManagementSystemOOP
         {
             // Handle cell content click event if needed
         }
+
+        // Inside BpTabAllRooms user control
+        public void PerformSearch(string searchText)
+        {
+            // Your search logic implementation here
+            // Example:
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                bool rowVisible = false;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchText))
+                    {
+                        rowVisible = true;
+                        break;
+                    }
+                }
+                row.Visible = rowVisible;
+            }
+        }
+
     }
 }

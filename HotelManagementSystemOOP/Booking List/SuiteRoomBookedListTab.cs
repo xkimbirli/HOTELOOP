@@ -29,7 +29,10 @@ namespace HotelManagementSystemOOP
                     string selectQuery = @"SELECT g.Name, b.RoomNumber, b.CheckInDate, b.CheckOutDate 
                                    FROM Booking b 
                                    JOIN Guest g ON b.GuestID = g.GuestID
-                                   WHERE b.RoomType = 'Suite'";
+                                   JOIN Rooms r ON b.RoomNumber = r.RoomNumber
+                                   WHERE b.RoomType = 'Suite' AND r.RoomStatus = 'Occupied'
+                                             AND b.Status = 'Arrived'";
+
 
                     using (var command = new SQLiteCommand(selectQuery, connection))
                     {
@@ -77,11 +80,15 @@ namespace HotelManagementSystemOOP
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["CheckoutButton"].Index)
+
+            if (e.RowIndex >= 0 && dataGridView1.Columns["CheckoutButton"] != null && e.ColumnIndex == dataGridView1.Columns["CheckoutButton"].Index)
             {
                 // Retrieve room information from the DataGridView
-                string roomNumber = dataGridView1.Rows[e.RowIndex].Cells["RoomNumber"].Value.ToString();
-                string roomType = "Suite"; // Assuming you have the RoomType available
+                string roomNumber = dataGridView1.Rows[e.RowIndex].Cells["RoomNumber"].Value?.ToString();
+                string guestName = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
+                string checkInDate = dataGridView1.Rows[e.RowIndex].Cells["CheckInDate"].Value?.ToString();
+                string checkOutDate = dataGridView1.Rows[e.RowIndex].Cells["CheckOutDate"].Value?.ToString();
+                string roomType = "Suite"; // Set correct room type
 
                 try
                 {
@@ -89,27 +96,40 @@ namespace HotelManagementSystemOOP
                     {
                         connection.Open();
 
-                        string updateQuery = @"UPDATE Rooms 
-                                      SET RoomStatus = 'Unclean' 
-                                      WHERE RoomNumber = @RoomNumber 
-                                      AND RoomType = @RoomType";
+                        // Update RoomStatus in Rooms table
+                        string updateRoomStatusQuery = @"UPDATE Rooms 
+                                                         SET RoomStatus = 'Unclean' 
+                                                         WHERE RoomNumber = @RoomNumber 
+                                                         AND RoomType = @RoomType";
 
-                        using (var command = new SQLiteCommand(updateQuery, connection))
+                        using (var command = new SQLiteCommand(updateRoomStatusQuery, connection))
                         {
                             command.Parameters.AddWithValue("@RoomNumber", roomNumber);
                             command.Parameters.AddWithValue("@RoomType", roomType);
                             command.ExecuteNonQuery();
                         }
+
+                        // Update Status in Booking table
+                        string updateBookingStatusQuery = @"UPDATE Booking 
+                                                            SET Status = 'CheckOut' 
+                                                            WHERE RoomNumber = @RoomNumber 
+                                                            AND RoomType = @RoomType 
+                                                            ";
+
+                        using (var command = new SQLiteCommand(updateBookingStatusQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@RoomNumber", roomNumber);
+                            command.Parameters.AddWithValue("@RoomType", roomType);
+                            command.Parameters.AddWithValue("@GuestName", guestName);
+                            command.ExecuteNonQuery();
+                        }
                     }
 
-                    // Remove row from DataGridView
-                    dataGridView1.Rows.RemoveAt(e.RowIndex);
-
-                    // Navigate to the Invoice form or another form
-                    Invoice invoice = new Invoice(this); // Pass any necessary parameters
+                    // Pass room and guest information to Invoice form
+                    Invoice invoice = new Invoice(this);
                     invoice.Show(); // Show the form
 
-                    // Close the current form (StandardRoomBookedListTab UserControl)
+                    // Close the current form (SuiteRoomBookedListTab UserControl)
                     Form parentForm = this.FindForm();
                     parentForm.Close();
                 }
@@ -118,7 +138,7 @@ namespace HotelManagementSystemOOP
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["ExtendButton"].Index)
+            else if (e.RowIndex >= 0 && dataGridView1.Columns["ExtendButton"] != null && e.ColumnIndex == dataGridView1.Columns["ExtendButton"].Index)
             {
                 // Handle extension button action here
             }

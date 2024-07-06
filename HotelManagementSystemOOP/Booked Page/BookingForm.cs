@@ -55,12 +55,16 @@ namespace HotelManagementSystemOOP
                         string sqlBooking = "CREATE TABLE IF NOT EXISTS Booking (" +
                                             "BookingID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                                             "GuestID INTEGER, " +
+                                            "RateID INTEGER, " +
                                             "RoomType VARCHAR(20), " +
                                             "RoomNumber INTEGER, " +
                                             "CheckInDate VARCHAR(20), " +
                                             "CheckOutDate VARCHAR(20), " +
                                             "Status VARCHAR(20), " +
-                                            "FOREIGN KEY(GuestID) REFERENCES Guest(GuestID))";
+                                            "CreatedDate DATETIME, " +
+                                            "FOREIGN KEY(GuestID) REFERENCES Guest(GuestID), " +
+                                           
+                                            "FOREIGN KEY(RateID) REFERENCES Rate(RateID))";
                         using (SQLiteCommand commandBooking = new SQLiteCommand(sqlBooking, sqlite))
                         {
                             commandBooking.ExecuteNonQuery();
@@ -161,12 +165,24 @@ namespace HotelManagementSystemOOP
 
                         // Always set status as Reserved
                         string status = "Reserved";
+                        
+                        cmd.CommandText = "SELECT RateID FROM Rate";
+                        //cmd.Parameters.AddWithValue("@discountcoupon", DiscountCoupon.Text);
+                        object rateidObj = cmd.ExecuteScalar();
+
+                        if (rateidObj == null)
+                        {
+                            MessageBox.Show("PaymentID not found for the specified discount coupon.");
+                            return;
+                        }
+
+                        long RateID = (long)rateidObj;
 
                         // Insert booking data
-                        cmd.CommandText = "INSERT INTO Booking(GuestID, RoomType, RoomNumber, CheckInDate, CheckOutDate, Status, CreatedDate) " +
-                                          "VALUES (@guestId, @roomtype, @roomnumber, @checkindate, @checkoutdate, @status, datetime('now', 'localtime'))";
+                        cmd.CommandText = "INSERT INTO Booking(GuestID,RateID, RoomType, RoomNumber, CheckInDate, CheckOutDate, Status, CreatedDate) " +
+                                          "VALUES (@guestId, @rateid, @roomtype, @roomnumber, @checkindate, @checkoutdate, @status, datetime('now', 'localtime'))";
                         cmd.Parameters.AddWithValue("@guestId", guestId);
-
+                        cmd.Parameters.AddWithValue("@rateid", RateID);
                         cmd.Parameters.AddWithValue("@roomtype", RoomTypeDropdownBF.Text);
                         cmd.Parameters.AddWithValue("@roomnumber", roomNumber);
                         cmd.Parameters.AddWithValue("@checkindate", dateTimeCheckIn.Text);

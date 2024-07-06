@@ -38,7 +38,7 @@
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
-            label7 = new System.Windows.Forms.Label();
+            SexAE = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
@@ -152,15 +152,15 @@
             label6.TabIndex = 8;
             label6.Text = "Adress:";
             // 
-            // label7
+            // SexAE
             // 
-            label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-            label7.Location = new System.Drawing.Point(18, 100);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(44, 19);
-            label7.TabIndex = 9;
-            label7.Text = "Sex:";
+            SexAE.AutoSize = true;
+            SexAE.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            SexAE.Location = new System.Drawing.Point(18, 100);
+            SexAE.Name = "SexAE";
+            SexAE.Size = new System.Drawing.Size(44, 19);
+            SexAE.TabIndex = 9;
+            SexAE.Text = "Sex:";
             // 
             // label8
             // 
@@ -361,7 +361,7 @@
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(label7);
+            Controls.Add(SexAE);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -391,7 +391,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label SexAE;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

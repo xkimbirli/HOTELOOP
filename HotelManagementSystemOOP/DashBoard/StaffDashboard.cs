@@ -69,9 +69,10 @@ namespace HotelManagementSystemOOP
                 {
                     connection.Open();
                     string selectQuery = "SELECT b.BookingID, g.Name, b.RoomType, b.RoomNumber, b.CheckInDate, b.CheckOutDate, b.Status, b.CreatedDate " +
-                                         "FROM Booking b " +
-                                         "JOIN Guest g ON b.GuestID = g.GuestID " +
-                                         "WHERE b.Status != 'Arrived'"; // Exclude rows with 'Arrived' status
+                     "FROM Booking b " +
+                     "JOIN Guest g ON b.GuestID = g.GuestID " +
+                     "WHERE b.Status != 'Arrived' AND b.Status != 'CheckOut'";
+
 
                     using (var command = new SQLiteCommand(selectQuery, connection))
                     {
