@@ -82,7 +82,7 @@ namespace HotelManagementSystemOOP
             panel3.Location = new System.Drawing.Point(20, 117);
             panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(377, 58);
+            panel3.Size = new System.Drawing.Size(1271, 58);
             panel3.TabIndex = 0;
             panel3.Paint += panel3_Paint;
             // 
@@ -93,7 +93,7 @@ namespace HotelManagementSystemOOP
             DeluxeRoomTabRC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             DeluxeRoomTabRC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             DeluxeRoomTabRC.ForeColor = System.Drawing.Color.White;
-            DeluxeRoomTabRC.Location = new System.Drawing.Point(138, 6);
+            DeluxeRoomTabRC.Location = new System.Drawing.Point(553, 6);
             DeluxeRoomTabRC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             DeluxeRoomTabRC.Name = "DeluxeRoomTabRC";
             DeluxeRoomTabRC.Size = new System.Drawing.Size(114, 43);
@@ -109,7 +109,7 @@ namespace HotelManagementSystemOOP
             SuiteRoomRC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SuiteRoomRC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             SuiteRoomRC.ForeColor = System.Drawing.Color.White;
-            SuiteRoomRC.Location = new System.Drawing.Point(266, 6);
+            SuiteRoomRC.Location = new System.Drawing.Point(1134, 9);
             SuiteRoomRC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             SuiteRoomRC.Name = "SuiteRoomRC";
             SuiteRoomRC.Size = new System.Drawing.Size(106, 46);

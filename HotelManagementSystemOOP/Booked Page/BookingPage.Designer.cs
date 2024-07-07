@@ -42,13 +42,13 @@
             MenuBookingButtonBP = new System.Windows.Forms.Button();
             MenuDashboardButtonBP = new System.Windows.Forms.Button();
             MenuRoomInfoButtonBP = new System.Windows.Forms.Button();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
-            comboBox1 = new System.Windows.Forms.ComboBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
+            monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            dataGridView1 = new System.Windows.Forms.DataGridView();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // SearchBarBP
@@ -56,12 +56,12 @@
             SearchBarBP.AcceptsReturn = true;
             SearchBarBP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             SearchBarBP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            SearchBarBP.Location = new System.Drawing.Point(571, 28);
+            SearchBarBP.Location = new System.Drawing.Point(552, 28);
             SearchBarBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             SearchBarBP.MaximumSize = new System.Drawing.Size(500, 35);
             SearchBarBP.MinimumSize = new System.Drawing.Size(2, 35);
             SearchBarBP.Name = "SearchBarBP";
-            SearchBarBP.Size = new System.Drawing.Size(406, 35);
+            SearchBarBP.Size = new System.Drawing.Size(313, 35);
             SearchBarBP.TabIndex = 2;
             SearchBarBP.Text = "search..";
             SearchBarBP.TextChanged += SearchBarBP_TextChanged;
@@ -69,24 +69,24 @@
             // DisplayPanelBP
             // 
             DisplayPanelBP.BackColor = System.Drawing.Color.Gainsboro;
-            DisplayPanelBP.Location = new System.Drawing.Point(21, 217);
+            DisplayPanelBP.Location = new System.Drawing.Point(21, 152);
             DisplayPanelBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             DisplayPanelBP.Name = "DisplayPanelBP";
-            DisplayPanelBP.Size = new System.Drawing.Size(1276, 588);
+            DisplayPanelBP.Size = new System.Drawing.Size(966, 678);
             DisplayPanelBP.TabIndex = 3;
             DisplayPanelBP.Paint += DisplayPanelBP_Paint;
             // 
             // panel3
             // 
-            panel3.BackColor = System.Drawing.Color.Black;
+            panel3.BackColor = System.Drawing.Color.White;
             panel3.Controls.Add(DeluxeRoomTabBP);
             panel3.Controls.Add(StandardRoomTabBP);
             panel3.Controls.Add(AllRoomsTabBP);
             panel3.Controls.Add(SuiteRoomBP);
-            panel3.Location = new System.Drawing.Point(18, 159);
+            panel3.Location = new System.Drawing.Point(21, 104);
             panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(1279, 65);
+            panel3.Size = new System.Drawing.Size(966, 51);
             panel3.TabIndex = 1;
             // 
             // DeluxeRoomTabBP
@@ -98,10 +98,10 @@
             DeluxeRoomTabBP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             DeluxeRoomTabBP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             DeluxeRoomTabBP.ForeColor = System.Drawing.Color.White;
-            DeluxeRoomTabBP.Location = new System.Drawing.Point(722, 5);
+            DeluxeRoomTabBP.Location = new System.Drawing.Point(201, 12);
             DeluxeRoomTabBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             DeluxeRoomTabBP.Name = "DeluxeRoomTabBP";
-            DeluxeRoomTabBP.Size = new System.Drawing.Size(187, 54);
+            DeluxeRoomTabBP.Size = new System.Drawing.Size(91, 37);
             DeluxeRoomTabBP.TabIndex = 5;
             DeluxeRoomTabBP.Text = "DELUXE";
             DeluxeRoomTabBP.UseVisualStyleBackColor = false;
@@ -116,10 +116,10 @@
             StandardRoomTabBP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             StandardRoomTabBP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             StandardRoomTabBP.ForeColor = System.Drawing.Color.White;
-            StandardRoomTabBP.Location = new System.Drawing.Point(379, 7);
+            StandardRoomTabBP.Location = new System.Drawing.Point(104, 14);
             StandardRoomTabBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             StandardRoomTabBP.Name = "StandardRoomTabBP";
-            StandardRoomTabBP.Size = new System.Drawing.Size(187, 54);
+            StandardRoomTabBP.Size = new System.Drawing.Size(98, 35);
             StandardRoomTabBP.TabIndex = 4;
             StandardRoomTabBP.Text = "STANDARD";
             StandardRoomTabBP.UseVisualStyleBackColor = false;
@@ -134,10 +134,10 @@
             AllRoomsTabBP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             AllRoomsTabBP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             AllRoomsTabBP.ForeColor = System.Drawing.Color.White;
-            AllRoomsTabBP.Location = new System.Drawing.Point(6, 2);
+            AllRoomsTabBP.Location = new System.Drawing.Point(0, 17);
             AllRoomsTabBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             AllRoomsTabBP.Name = "AllRoomsTabBP";
-            AllRoomsTabBP.Size = new System.Drawing.Size(208, 59);
+            AllRoomsTabBP.Size = new System.Drawing.Size(105, 32);
             AllRoomsTabBP.TabIndex = 0;
             AllRoomsTabBP.Text = "ALL ROOMS";
             AllRoomsTabBP.UseVisualStyleBackColor = false;
@@ -153,10 +153,10 @@
             SuiteRoomBP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SuiteRoomBP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             SuiteRoomBP.ForeColor = System.Drawing.Color.White;
-            SuiteRoomBP.Location = new System.Drawing.Point(1089, 5);
+            SuiteRoomBP.Location = new System.Drawing.Point(292, 17);
             SuiteRoomBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             SuiteRoomBP.Name = "SuiteRoomBP";
-            SuiteRoomBP.Size = new System.Drawing.Size(187, 54);
+            SuiteRoomBP.Size = new System.Drawing.Size(86, 31);
             SuiteRoomBP.TabIndex = 3;
             SuiteRoomBP.Text = "SUITE";
             SuiteRoomBP.UseVisualStyleBackColor = false;
@@ -168,7 +168,7 @@
             AddBookingbuttonBP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             AddBookingbuttonBP.Font = new System.Drawing.Font("Century Schoolbook", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             AddBookingbuttonBP.ForeColor = System.Drawing.Color.White;
-            AddBookingbuttonBP.Location = new System.Drawing.Point(883, 92);
+            AddBookingbuttonBP.Location = new System.Drawing.Point(882, 61);
             AddBookingbuttonBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             AddBookingbuttonBP.Name = "AddBookingbuttonBP";
             AddBookingbuttonBP.Size = new System.Drawing.Size(94, 31);
@@ -249,38 +249,31 @@
             MenuRoomInfoButtonBP.UseVisualStyleBackColor = false;
             MenuRoomInfoButtonBP.Click += MenuRoomInfoButtonBP_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox1.Location = new System.Drawing.Point(18, 93);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(362, 34);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Availble", "Reserved", "Occupied", "Under Maintenance" });
-            comboBox1.Location = new System.Drawing.Point(544, 92);
-            comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new System.Drawing.Size(316, 28);
-            comboBox1.TabIndex = 11;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Location = new System.Drawing.Point(1022, 18);
+            pictureBox2.Location = new System.Drawing.Point(1038, 12);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(228, 109);
+            pictureBox2.Size = new System.Drawing.Size(227, 143);
             pictureBox2.TabIndex = 13;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
+            // 
+            // monthCalendar1
+            // 
+            monthCalendar1.Location = new System.Drawing.Point(1021, 199);
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 14;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new System.Drawing.Point(1005, 428);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new System.Drawing.Size(296, 402);
+            dataGridView1.TabIndex = 15;
             // 
             // BookingPage
             // 
@@ -288,17 +281,17 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
             ClientSize = new System.Drawing.Size(1323, 868);
+            Controls.Add(SearchBarBP);
+            Controls.Add(dataGridView1);
+            Controls.Add(monthCalendar1);
             Controls.Add(pictureBox2);
             Controls.Add(panel3);
-            Controls.Add(comboBox1);
-            Controls.Add(pictureBox1);
             Controls.Add(MenuRoomInfoButtonBP);
             Controls.Add(MenuDashboardButtonBP);
             Controls.Add(MenuRoomButtonBP);
             Controls.Add(MenuBookingButtonBP);
             Controls.Add(AddBookingbuttonBP);
             Controls.Add(DisplayPanelBP);
-            Controls.Add(SearchBarBP);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             MaximumSize = new System.Drawing.Size(1341, 915);
@@ -308,8 +301,8 @@
             Load += BookingPage_Load;
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -322,14 +315,14 @@
         private System.Windows.Forms.Button MenuRoomButtonBP;
         private System.Windows.Forms.Button MenuBookingButtonBP;
         private System.Windows.Forms.Button MenuDashboardButtonBP;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button SuiteRoomBP;
         private System.Windows.Forms.Button AllRoomsTabBP;
         private System.Windows.Forms.Button StandardRoomTabBP;
         private System.Windows.Forms.Button DeluxeRoomTabBP;
         private System.Windows.Forms.Button MenuRoomInfoButtonBP;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

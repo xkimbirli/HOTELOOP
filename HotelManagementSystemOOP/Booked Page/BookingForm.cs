@@ -61,9 +61,10 @@ namespace HotelManagementSystemOOP
                                             "CheckInDate VARCHAR(20), " +
                                             "CheckOutDate VARCHAR(20), " +
                                             "Status VARCHAR(20), " +
+                                            //  "Duration, "+
                                             "CreatedDate DATETIME, " +
                                             "FOREIGN KEY(GuestID) REFERENCES Guest(GuestID), " +
-                                           
+
                                             "FOREIGN KEY(RateID) REFERENCES Rate(RateID))";
                         using (SQLiteCommand commandBooking = new SQLiteCommand(sqlBooking, sqlite))
                         {
@@ -98,6 +99,12 @@ namespace HotelManagementSystemOOP
 
             SexDropdownBF.Items.Add("Male");
             SexDropdownBF.Items.Add("Female");
+
+            /*SexDropdownBF.Items.Add("3");
+            SexDropdownBF.Items.Add("6");
+            SexDropdownBF.Items.Add("10");
+            SexDropdownBF.Items.Add("12");
+            SexDropdownBF.Items.Add("24");*/
         }
 
         private bool IsRoomAvailable(int roomNumber, string roomType)
@@ -165,7 +172,7 @@ namespace HotelManagementSystemOOP
 
                         // Always set status as Reserved
                         string status = "Reserved";
-                        
+
                         cmd.CommandText = "SELECT RateID FROM Rate";
                         //cmd.Parameters.AddWithValue("@discountcoupon", DiscountCoupon.Text);
                         object rateidObj = cmd.ExecuteScalar();
@@ -377,6 +384,11 @@ namespace HotelManagementSystemOOP
         {
             ValidateGuestCount();
         }
+
+        private void CheckInTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
 

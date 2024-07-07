@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             dataGridView1 = new System.Windows.Forms.DataGridView();
+            SearchDeluxe = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -61,10 +62,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = System.Drawing.SystemColors.ControlDark;
-            dataGridView1.Location = new System.Drawing.Point(0, 0);
+            dataGridView1.Location = new System.Drawing.Point(0, 59);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -83,25 +83,37 @@
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new System.Drawing.Size(927, 742);
+            dataGridView1.Size = new System.Drawing.Size(1230, 683);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // SearchDeluxe
+            // 
+            SearchDeluxe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            SearchDeluxe.Location = new System.Drawing.Point(950, 16);
+            SearchDeluxe.Name = "SearchDeluxe";
+            SearchDeluxe.Size = new System.Drawing.Size(258, 27);
+            SearchDeluxe.TabIndex = 1;
+            SearchDeluxe.TextChanged += SearchDeluxe_TextChanged;
             // 
             // DeluxeRoomBookedListTab
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.SystemColors.Control;
+            BackColor = System.Drawing.Color.White;
+            Controls.Add(SearchDeluxe);
             Controls.Add(dataGridView1);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "DeluxeRoomBookedListTab";
-            Size = new System.Drawing.Size(927, 742);
+            Size = new System.Drawing.Size(1226, 742);
             Load += DeluxeRoomBookedListTab_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox SearchDeluxe;
     }
 }

@@ -104,11 +104,52 @@ namespace HotelManagementSystemOOP
                     {
                         connection.Open();
 
+                        // Fetch guest details
+                        string guestDetailsQuery = @"SELECT Contact, Email, NumberOfKids, NumberOfAdults 
+                                             FROM Guest 
+                                             WHERE Name = @GuestName";
+
+                        string guestPhoneNumber = string.Empty;
+                        string guestEmail = string.Empty;
+                        int guestKidsNum = 0;
+                        int guestAdultNum = 0;
+
+                        using (var command = new SQLiteCommand(guestDetailsQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@GuestName", guestName);
+                            using (var reader = command.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    guestPhoneNumber = reader["Contact"].ToString();
+                                    guestEmail = reader["Email"].ToString();
+                                    guestKidsNum = Convert.ToInt32(reader["NumberOfKids"]);
+                                    guestAdultNum = Convert.ToInt32(reader["NumberOfAdults"]);
+                                }
+                            }
+                        }
+
+                        // Fetch booking ID
+                        string bookingIDQuery = @"SELECT BookingID 
+                                          FROM Booking 
+                                          WHERE RoomNumber = @RoomNumber 
+                                          AND RoomType = @RoomType 
+                                          AND GuestID = (SELECT GuestID FROM Guest WHERE Name = @GuestName)";
+
+                        int bookingID = 0;
+                        using (var command = new SQLiteCommand(bookingIDQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@RoomNumber", roomNumber);
+                            command.Parameters.AddWithValue("@RoomType", roomType);
+                            command.Parameters.AddWithValue("@GuestName", guestName);
+                            bookingID = Convert.ToInt32(command.ExecuteScalar());
+                        }
+
                         // Update RoomStatus in Rooms table
                         string updateRoomStatusQuery = @"UPDATE Rooms 
-                                                         SET RoomStatus = 'Unclean' 
-                                                         WHERE RoomNumber = @RoomNumber 
-                                                         AND RoomType = @RoomType";
+                                                 SET RoomStatus = 'Unclean' 
+                                                 WHERE RoomNumber = @RoomNumber 
+                                                 AND RoomType = @RoomType";
 
                         using (var command = new SQLiteCommand(updateRoomStatusQuery, connection))
                         {
@@ -119,10 +160,10 @@ namespace HotelManagementSystemOOP
 
                         // Update Status in Booking table
                         string updateBookingStatusQuery = @"UPDATE Booking 
-                                                            SET Status = 'CheckOut' 
-                                                            WHERE RoomNumber = @RoomNumber 
-                                                            AND RoomType = @RoomType 
-                                                            ";
+                                                    SET Status = 'CheckOut' 
+                                                    WHERE RoomNumber = @RoomNumber 
+                                                    AND RoomType = @RoomType 
+                                                    ";//AND GuestID = (SELECT GuestID FROM Guest WHERE Name = @GuestName
 
                         using (var command = new SQLiteCommand(updateBookingStatusQuery, connection))
                         {
@@ -131,15 +172,16 @@ namespace HotelManagementSystemOOP
                             command.Parameters.AddWithValue("@GuestName", guestName);
                             command.ExecuteNonQuery();
                         }
+
+                        // Pass room and guest information to Invoice form
+                        Invoice invoice = new Invoice(guestName, guestPhoneNumber, guestEmail, guestKidsNum, guestAdultNum,
+                                                      bookingID, roomType, roomNumber, DateTime.Parse(checkInDate), DateTime.Parse(checkOutDate));
+                        invoice.Show(); // Show the form
+
+                        // Close the current form (StandardRoomBookedListTab UserControl)
+                        Form parentForm = this.FindForm();
+                        parentForm.Close();
                     }
-
-                    // Pass room and guest information to Invoice form
-                    Invoice invoice = new Invoice(this);
-                    invoice.Show(); // Show the form
-
-                    // Close the current form (StandardRoomBookedListTab UserControl)
-                    Form parentForm = this.FindForm();
-                    parentForm.Close();
                 }
                 catch (Exception ex)
                 {

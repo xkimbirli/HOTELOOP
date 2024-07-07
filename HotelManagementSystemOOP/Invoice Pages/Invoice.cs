@@ -49,7 +49,24 @@ namespace HotelManagementSystemOOP
         {
             con = new SQLiteConnection(cs);
         }
+        public Invoice(string guestName, string guestPhoneNumber, string guestEmail, int guestKidsNum, int guestAdultNum,
+                   int bookingID, string roomType, string roomNumber, DateTime checkInDate, DateTime checkOutDate)
+        {
+            InitializeComponent();
+            con = new SQLiteConnection(cs); // Initialize the connection
 
+            // Set the text boxes with the passed data
+            GuestName.Text = guestName;
+            GuestPhoneNumber.Text = guestPhoneNumber;
+            GuestEmail.Text = guestEmail;
+            GuestKidsNum.Text = guestKidsNum.ToString();
+            GuestAdultNum.Text = guestAdultNum.ToString();
+            BookingID.Text = bookingID.ToString();
+            RoomType.Text = roomType;
+            RoomNumber.Text = roomNumber;
+            label13.Text = checkInDate.ToString("yyyy-MM-dd");
+            CheckOutDate.Text = checkOutDate.ToString("yyyy-MM-dd");
+        }
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -179,6 +196,32 @@ namespace HotelManagementSystemOOP
                         }
                     }
                 }
+                // Query to fetch payment details including discount from Payments and Discount tables
+                string selectPaymentQuery = "SELECT p.PaymentStatus, p.PaymentMethod, d.Percentage " +
+                                   "FROM Payments p " +
+                                   "LEFT JOIN Discount d ON p.DiscountID = d.DiscountID " +
+                                   "WHERE p.BookingID = @BookingID";
+
+                using (var paymentCommand = new SQLiteCommand(selectPaymentQuery, con))
+                {
+                    paymentCommand.Parameters.AddWithValue("@BookingID", BookingID.Text);
+
+                    using (var paymentReader = paymentCommand.ExecuteReader())
+                    {
+                        if (paymentReader.Read())
+                        {
+                            PaymentStatus.Text = paymentReader["PaymentStatus"].ToString();
+                            PaymentMet.Text = paymentReader["PaymentMethod"].ToString();
+
+                            // Display the discount percentage in the Discount textbox
+                            Discount.Text = paymentReader["Percentage"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No payment details found for the provided BookingID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -190,8 +233,7 @@ namespace HotelManagementSystemOOP
             }
         }
 
-
-        private void GuestAdultNum_Click(object sender, EventArgs e)
+            private void GuestAdultNum_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SQLite;
-using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 
 namespace HotelManagementSystemOOP
 {
@@ -18,11 +10,13 @@ namespace HotelManagementSystemOOP
         string cs = @"URI=file:" + Application.StartupPath + "\\TOTOO.db";
 
         private BookingForm bookingForm;
+
         public Payment(BookingForm bookingForm)
         {
             InitializeComponent();
             this.bookingForm = bookingForm;
         }
+
         private void Create_db()
         {
             if (!System.IO.File.Exists(path))
@@ -40,19 +34,21 @@ namespace HotelManagementSystemOOP
                               "DiscountCoupon VARCHAR(50), " +
                               "PaymentMethod VARCHAR(20), " +
                               "PaymentStatus VARCHAR(20), " +
+                              "FOREIGN KEY(DiscountID) REFERENCES Discount(DiscountID), " +
                               "FOREIGN KEY(BookingID) REFERENCES Booking(BookingID))";
                 SQLiteCommand command = new SQLiteCommand(sql, sqlite);
                 command.ExecuteNonQuery();
             }
         }
+
         private void InitializeFormControls()
         {
-            // Populate RoomTypeDropdownBF with room types
+            // Populate PaymentMethodDDP with payment methods
             PaymentMethodDDP.Items.Add("Cash");
             PaymentMethodDDP.Items.Add("Card");
             PaymentMethodDDP.Items.Add("E-Wallet");
 
-            // Populate SexDropdownBF with sex options
+            // Populate PaymetStatusDDP with payment status options
             PaymetStatusDDP.Items.Add("Paid");
             PaymetStatusDDP.Items.Add("Not Paid");
         }
@@ -61,7 +57,6 @@ namespace HotelManagementSystemOOP
         {
             // Call the method to delete the most recent booking
             bookingForm.DeleteRecentBooking();
-
             this.Close();
         }
 
@@ -73,9 +68,7 @@ namespace HotelManagementSystemOOP
 
         private void PaymentMethodDDP_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
 
         private void SavePayment_Click(object sender, EventArgs e)
         {
@@ -90,103 +83,70 @@ namespace HotelManagementSystemOOP
                 return;
             }
 
+            int discountPercentage = 0;
+            long discountId = 0;
+            bool validDiscountCoupon = true;
+
             using (var con = new SQLiteConnection(cs))
             {
                 con.Open();
 
-                // Retrieve the most recent BookingID
-                long bookingId;
-                using (var cmd = new SQLiteCommand("SELECT BookingID FROM Booking ORDER BY BookingID DESC LIMIT 1", con))
-                {
-                    object result = cmd.ExecuteScalar();
-                    if (result == null)
-                    {
-                        MessageBox.Show("No booking found.");
-                        return;
-                    }
-                    bookingId = (long)result;
-                }
-
-                // Check if the discount coupon exists in Discounts table
                 if (!string.IsNullOrWhiteSpace(discountCoupon))
                 {
-                    string query = "SELECT Percentage FROM Discount WHERE DiscountCoupon = @discountcoupon";
-                    using (var cmd = new SQLiteCommand(query, con))
+                    using (var cmd = new SQLiteCommand("SELECT DiscountID, Percentage FROM Discount WHERE DiscountCoupon = @discountCoupon", con))
                     {
-                        cmd.Parameters.AddWithValue("@discountcoupon", discountCoupon);
-                        object result = cmd.ExecuteScalar();
-
-                        if (result != null)
+                        cmd.Parameters.AddWithValue("@discountCoupon", discountCoupon);
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
-                            int accumulatedPercentage = Convert.ToInt32(result);
-                            MessageBox.Show($"You accumulated {accumulatedPercentage}%.");
-
-                            // Save the payment details including discount coupon
-                            using (var saveCmd = new SQLiteCommand(con))
+                            if (reader.Read())
                             {
-                                saveCmd.CommandText = "INSERT INTO Payments(BookingID, DiscountCoupon, PaymentMethod, PaymentStatus) " +
-                                                      "VALUES (@bookingid, @discountcoupon, @paymentmethod, @paymentstatus)";
-                                saveCmd.Parameters.AddWithValue("@bookingid", bookingId);
-                                saveCmd.Parameters.AddWithValue("@discountcoupon", discountCoupon);
-                                saveCmd.Parameters.AddWithValue("@paymentmethod", paymentMethod);
-                                saveCmd.Parameters.AddWithValue("@paymentstatus", paymentStatus);
-
-                                saveCmd.ExecuteNonQuery();
-                                MessageBox.Show("Payment saved successfully.");
+                                discountId = reader.GetInt64(0);
+                                discountPercentage = reader.GetInt32(1);
                             }
-
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Discount coupon not found in database. Please enter a valid discount coupon.");
+                            else
+                            {
+                                MessageBox.Show("Discount coupon not found in database. Please enter a valid discount coupon.");
+                                validDiscountCoupon = false;
+                            }
                         }
                     }
                 }
-                else
+
+                if (validDiscountCoupon)
                 {
-                    MessageBox.Show("Please enter a discount coupon.");
+                    // Retrieve the most recent BookingID
+                    long bookingId;
+                    using (var cmd = new SQLiteCommand("SELECT BookingID FROM Booking ORDER BY BookingID DESC LIMIT 1", con))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        if (result == null)
+                        {
+                            MessageBox.Show("No booking found.");
+                            return;
+                        }
+                        bookingId = (long)result;
+                    }
+
+                    // Save the payment details including discount coupon
+                    using (var saveCmd = new SQLiteCommand(con))
+                    {
+                        saveCmd.CommandText = "INSERT INTO Payments(BookingID, DiscountID, DiscountCoupon, PaymentMethod, PaymentStatus) " +
+                                              "VALUES (@bookingid, @discountid, @discountcoupon, @paymentmethod, @paymentstatus)";
+                        saveCmd.Parameters.AddWithValue("@bookingid", bookingId);
+                        saveCmd.Parameters.AddWithValue("@discountid", discountId);
+                        saveCmd.Parameters.AddWithValue("@discountcoupon", discountCoupon);
+                        saveCmd.Parameters.AddWithValue("@paymentmethod", paymentMethod);
+                        saveCmd.Parameters.AddWithValue("@paymentstatus", paymentStatus);
+
+                        saveCmd.ExecuteNonQuery();
+                        MessageBox.Show($"Payment saved successfully. You accumulated {discountPercentage}% discount.");
+                    }
+                    this.Close();
                 }
             }
         }
-
-
-
         private void DiscountCoupon_TextChanged(object sender, EventArgs e)
         {
-            /* string couponInput = DiscountCoupon.Text.Trim();
-
-             if (string.IsNullOrWhiteSpace(couponInput))
-             {
-                 return; // Avoid unnecessary database calls when input is empty
-             }
-
-             using (var con = new SQLiteConnection(cs))
-             {
-                 con.Open();
-
-                 // Query to check if the discount coupon exists in the database
-                 string query = "SELECT COUNT(*) FROM Discount WHERE DiscountCoupon = @couponInput";
-
-                 using (var cmd = new SQLiteCommand(query, con))
-                 {
-                     cmd.Parameters.AddWithValue("@couponInput", couponInput);
-
-                     int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                     if (count > 0)
-                     {
-                         // Coupon exists in the database
-                         MessageBox.Show("Discount coupon is valid!");
-                     }
-                     else
-                     {
-                         // Coupon does not exist in the database
-                         MessageBox.Show("Invalid discount coupon.");
-                     }
-                 }
-             }
-         }*/
         }
-    }
+        }
 }

@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HotelManagementSystemOOP
 {
     public partial class SuiteRoomBookedListTab : UserControl
     {
+        private DataTable dataTable; // Declare dataTable at the class level
         public SuiteRoomBookedListTab()
         {
             InitializeComponent();
@@ -144,6 +146,41 @@ namespace HotelManagementSystemOOP
             }
         }
 
+        private void SearchSuite_TextChanged(object sender, EventArgs e)
+        {
+            FilterData(SearchSuite.Text.Trim().ToLower());
+        }
+        private void FilterData(string searchTerm)
+        {
+            try
+            {
+                if (dataTable != null)
+                {
+                    DataTable filteredTable = dataTable.Clone(); // Create a clone of the structure without data
 
+                    // Filter rows based on guest name or room number
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        if (row["Name"].ToString().ToLower().Contains(searchTerm) ||
+                            row["RoomNumber"].ToString().ToLower().Contains(searchTerm))
+                        {
+                            filteredTable.ImportRow(row); // Import matching rows to the new table
+                        }
+                    }
+
+                    dataGridView1.DataSource = filteredTable;
+
+                    // If no results found, show an empty DataTable
+                    if (filteredTable.Rows.Count == 0)
+                    {
+                        dataGridView1.DataSource = null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             ExitButtonBookingForm = new System.Windows.Forms.Button();
             panel1 = new System.Windows.Forms.Panel();
+            label17 = new System.Windows.Forms.Label();
             IDNumberBF = new System.Windows.Forms.TextBox();
             IDTypeBF = new System.Windows.Forms.TextBox();
             label16 = new System.Windows.Forms.Label();
@@ -61,6 +62,8 @@
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            CheckInTime = new System.Windows.Forms.DateTimePicker();
+            CheckOutTime = new System.Windows.Forms.DateTimePicker();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,6 +82,9 @@
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.White;
+            panel1.Controls.Add(CheckOutTime);
+            panel1.Controls.Add(CheckInTime);
+            panel1.Controls.Add(label17);
             panel1.Controls.Add(IDNumberBF);
             panel1.Controls.Add(IDTypeBF);
             panel1.Controls.Add(label16);
@@ -118,11 +124,22 @@
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label17.ForeColor = System.Drawing.Color.Black;
+            label17.Location = new System.Drawing.Point(661, 248);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(81, 21);
+            label17.TabIndex = 40;
+            label17.Text = "Duration";
+            // 
             // IDNumberBF
             // 
             IDNumberBF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             IDNumberBF.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            IDNumberBF.Location = new System.Drawing.Point(858, 585);
+            IDNumberBF.Location = new System.Drawing.Point(858, 623);
             IDNumberBF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             IDNumberBF.Name = "IDNumberBF";
             IDNumberBF.Size = new System.Drawing.Size(307, 28);
@@ -132,7 +149,7 @@
             // 
             IDTypeBF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             IDTypeBF.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            IDTypeBF.Location = new System.Drawing.Point(858, 513);
+            IDTypeBF.Location = new System.Drawing.Point(858, 551);
             IDTypeBF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             IDTypeBF.Name = "IDTypeBF";
             IDTypeBF.Size = new System.Drawing.Size(307, 28);
@@ -143,7 +160,7 @@
             label16.AutoSize = true;
             label16.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label16.ForeColor = System.Drawing.Color.Black;
-            label16.Location = new System.Drawing.Point(661, 592);
+            label16.Location = new System.Drawing.Point(661, 630);
             label16.Name = "label16";
             label16.Size = new System.Drawing.Size(99, 21);
             label16.TabIndex = 37;
@@ -154,7 +171,7 @@
             label15.AutoSize = true;
             label15.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label15.ForeColor = System.Drawing.Color.Black;
-            label15.Location = new System.Drawing.Point(660, 520);
+            label15.Location = new System.Drawing.Point(660, 558);
             label15.Name = "label15";
             label15.Size = new System.Drawing.Size(71, 21);
             label15.TabIndex = 36;
@@ -209,7 +226,7 @@
             // 
             NationalitBF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             NationalitBF.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            NationalitBF.Location = new System.Drawing.Point(858, 451);
+            NationalitBF.Location = new System.Drawing.Point(858, 489);
             NationalitBF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             NationalitBF.Name = "NationalitBF";
             NationalitBF.Size = new System.Drawing.Size(307, 28);
@@ -260,7 +277,7 @@
             // 
             EmailBF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             EmailBF.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            EmailBF.Location = new System.Drawing.Point(244, 585);
+            EmailBF.Location = new System.Drawing.Point(244, 623);
             EmailBF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             EmailBF.Name = "EmailBF";
             EmailBF.Size = new System.Drawing.Size(307, 28);
@@ -271,7 +288,7 @@
             // 
             ContactBF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             ContactBF.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            ContactBF.Location = new System.Drawing.Point(244, 513);
+            ContactBF.Location = new System.Drawing.Point(244, 551);
             ContactBF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             ContactBF.Name = "ContactBF";
             ContactBF.Size = new System.Drawing.Size(307, 28);
@@ -283,7 +300,7 @@
             label12.AutoSize = true;
             label12.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label12.ForeColor = System.Drawing.Color.Black;
-            label12.Location = new System.Drawing.Point(29, 592);
+            label12.Location = new System.Drawing.Point(29, 630);
             label12.Name = "label12";
             label12.Size = new System.Drawing.Size(52, 21);
             label12.TabIndex = 25;
@@ -294,7 +311,7 @@
             label13.AutoSize = true;
             label13.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label13.ForeColor = System.Drawing.Color.Black;
-            label13.Location = new System.Drawing.Point(29, 520);
+            label13.Location = new System.Drawing.Point(29, 558);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(82, 21);
             label13.TabIndex = 24;
@@ -305,7 +322,7 @@
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label11.ForeColor = System.Drawing.Color.Black;
-            label11.Location = new System.Drawing.Point(661, 454);
+            label11.Location = new System.Drawing.Point(661, 492);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(99, 21);
             label11.TabIndex = 23;
@@ -316,7 +333,7 @@
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label10.ForeColor = System.Drawing.Color.Black;
-            label10.Location = new System.Drawing.Point(29, 451);
+            label10.Location = new System.Drawing.Point(29, 489);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(37, 21);
             label10.TabIndex = 21;
@@ -329,7 +346,7 @@
             SexDropdownBF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             SexDropdownBF.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             SexDropdownBF.FormattingEnabled = true;
-            SexDropdownBF.Location = new System.Drawing.Point(244, 451);
+            SexDropdownBF.Location = new System.Drawing.Point(244, 489);
             SexDropdownBF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             SexDropdownBF.Name = "SexDropdownBF";
             SexDropdownBF.Size = new System.Drawing.Size(307, 29);
@@ -341,7 +358,7 @@
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label9.ForeColor = System.Drawing.Color.Black;
-            label9.Location = new System.Drawing.Point(501, 328);
+            label9.Location = new System.Drawing.Point(501, 366);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(302, 39);
             label9.TabIndex = 19;
@@ -352,7 +369,7 @@
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label5.ForeColor = System.Drawing.Color.Black;
-            label5.Location = new System.Drawing.Point(29, 395);
+            label5.Location = new System.Drawing.Point(29, 433);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(61, 21);
             label5.TabIndex = 18;
@@ -363,7 +380,7 @@
             // 
             GuestNameBF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             GuestNameBF.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            GuestNameBF.Location = new System.Drawing.Point(244, 388);
+            GuestNameBF.Location = new System.Drawing.Point(244, 426);
             GuestNameBF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             GuestNameBF.Name = "GuestNameBF";
             GuestNameBF.Size = new System.Drawing.Size(597, 28);
@@ -469,6 +486,27 @@
             label1.TabIndex = 0;
             label1.Text = "Add Booking";
             // 
+            // CheckInTime
+            // 
+            CheckInTime.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CheckInTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            CheckInTime.Location = new System.Drawing.Point(858, 251);
+            CheckInTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            CheckInTime.Name = "CheckInTime";
+            CheckInTime.Size = new System.Drawing.Size(143, 28);
+            CheckInTime.TabIndex = 41;
+            CheckInTime.ValueChanged += CheckInTime_ValueChanged;
+            // 
+            // CheckOutTime
+            // 
+            CheckOutTime.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CheckOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            CheckOutTime.Location = new System.Drawing.Point(1022, 252);
+            CheckOutTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            CheckOutTime.Name = "CheckOutTime";
+            CheckOutTime.Size = new System.Drawing.Size(143, 28);
+            CheckOutTime.TabIndex = 42;
+            // 
             // BookingForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -495,7 +533,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Booking;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimeCheckIn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
@@ -527,5 +564,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox IDNumberBF;
         private System.Windows.Forms.TextBox IDTypeBF;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker CheckOutTime;
+        private System.Windows.Forms.DateTimePicker CheckInTime;
     }
 }
