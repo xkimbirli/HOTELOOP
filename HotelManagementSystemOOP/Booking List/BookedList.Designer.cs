@@ -37,13 +37,11 @@ namespace HotelManagementSystemOOP
             DeluxeRoomTabRC = new System.Windows.Forms.Button();
             SuiteRoomRC = new System.Windows.Forms.Button();
             StandardRoomTabRC = new System.Windows.Forms.Button();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             MenuDashboardBL = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -66,37 +64,40 @@ namespace HotelManagementSystemOOP
             // 
             // panel2
             // 
-            panel2.Location = new System.Drawing.Point(23, 174);
+            panel2.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            panel2.Location = new System.Drawing.Point(23, 150);
             panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(1268, 659);
+            panel2.Size = new System.Drawing.Size(1268, 683);
             panel2.TabIndex = 12;
             panel2.Paint += panel2_Paint;
             // 
             // panel3
             // 
-            panel3.BackColor = System.Drawing.Color.Black;
+            panel3.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             panel3.Controls.Add(DeluxeRoomTabRC);
             panel3.Controls.Add(SuiteRoomRC);
             panel3.Controls.Add(StandardRoomTabRC);
-            panel3.Location = new System.Drawing.Point(20, 117);
+            panel3.Location = new System.Drawing.Point(21, 93);
             panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(1271, 58);
+            panel3.Size = new System.Drawing.Size(316, 58);
             panel3.TabIndex = 0;
             panel3.Paint += panel3_Paint;
             // 
             // DeluxeRoomTabRC
             // 
-            DeluxeRoomTabRC.BackColor = System.Drawing.Color.Black;
+            DeluxeRoomTabRC.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             DeluxeRoomTabRC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            DeluxeRoomTabRC.FlatAppearance.BorderSize = 0;
+            DeluxeRoomTabRC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
             DeluxeRoomTabRC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             DeluxeRoomTabRC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             DeluxeRoomTabRC.ForeColor = System.Drawing.Color.White;
-            DeluxeRoomTabRC.Location = new System.Drawing.Point(553, 6);
+            DeluxeRoomTabRC.Location = new System.Drawing.Point(99, 30);
             DeluxeRoomTabRC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             DeluxeRoomTabRC.Name = "DeluxeRoomTabRC";
-            DeluxeRoomTabRC.Size = new System.Drawing.Size(114, 43);
+            DeluxeRoomTabRC.Size = new System.Drawing.Size(102, 28);
             DeluxeRoomTabRC.TabIndex = 2;
             DeluxeRoomTabRC.Text = "DELUXE";
             DeluxeRoomTabRC.UseVisualStyleBackColor = false;
@@ -104,15 +105,17 @@ namespace HotelManagementSystemOOP
             // 
             // SuiteRoomRC
             // 
-            SuiteRoomRC.BackColor = System.Drawing.Color.Black;
+            SuiteRoomRC.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             SuiteRoomRC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            SuiteRoomRC.FlatAppearance.BorderSize = 0;
+            SuiteRoomRC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
             SuiteRoomRC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SuiteRoomRC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             SuiteRoomRC.ForeColor = System.Drawing.Color.White;
-            SuiteRoomRC.Location = new System.Drawing.Point(1134, 9);
+            SuiteRoomRC.Location = new System.Drawing.Point(200, 30);
             SuiteRoomRC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             SuiteRoomRC.Name = "SuiteRoomRC";
-            SuiteRoomRC.Size = new System.Drawing.Size(106, 46);
+            SuiteRoomRC.Size = new System.Drawing.Size(102, 28);
             SuiteRoomRC.TabIndex = 3;
             SuiteRoomRC.Text = "SUITE";
             SuiteRoomRC.UseVisualStyleBackColor = false;
@@ -120,38 +123,30 @@ namespace HotelManagementSystemOOP
             // 
             // StandardRoomTabRC
             // 
-            StandardRoomTabRC.BackColor = System.Drawing.Color.Black;
+            StandardRoomTabRC.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             StandardRoomTabRC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            StandardRoomTabRC.FlatAppearance.BorderSize = 0;
+            StandardRoomTabRC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            StandardRoomTabRC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
             StandardRoomTabRC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             StandardRoomTabRC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             StandardRoomTabRC.ForeColor = System.Drawing.Color.White;
-            StandardRoomTabRC.Location = new System.Drawing.Point(14, 9);
+            StandardRoomTabRC.Location = new System.Drawing.Point(2, 30);
             StandardRoomTabRC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             StandardRoomTabRC.Name = "StandardRoomTabRC";
-            StandardRoomTabRC.Size = new System.Drawing.Size(112, 41);
+            StandardRoomTabRC.Size = new System.Drawing.Size(102, 28);
             StandardRoomTabRC.TabIndex = 1;
             StandardRoomTabRC.Text = "STANDARD";
             StandardRoomTabRC.UseVisualStyleBackColor = false;
             StandardRoomTabRC.Click += StandardRoomTabRC_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox1.Location = new System.Drawing.Point(358, 14);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(80, 69);
-            pictureBox1.TabIndex = 16;
-            pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Location = new System.Drawing.Point(1125, 18);
+            pictureBox2.Location = new System.Drawing.Point(1089, 12);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(159, 82);
+            pictureBox2.Size = new System.Drawing.Size(202, 120);
             pictureBox2.TabIndex = 17;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
@@ -193,14 +188,13 @@ namespace HotelManagementSystemOOP
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.White;
+            BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             ClientSize = new System.Drawing.Size(1323, 868);
             Controls.Add(button1);
             Controls.Add(MenuDashboardBL);
             Controls.Add(pictureBox2);
             Controls.Add(panel3);
-            Controls.Add(pictureBox1);
             Controls.Add(MenuBookPageBL);
             Controls.Add(panel2);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -211,7 +205,6 @@ namespace HotelManagementSystemOOP
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Load += BookingList_Load;
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
@@ -228,7 +221,6 @@ namespace HotelManagementSystemOOP
         private System.Windows.Forms.Button SuiteRoomRC;
         private System.Windows.Forms.Button StandardRoomTabRC;
         private System.Windows.Forms.Button DeluxeRoomTabRC;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button MenuDashboardBL;
         private System.Windows.Forms.Button button1;

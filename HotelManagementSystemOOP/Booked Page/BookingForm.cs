@@ -58,6 +58,8 @@ namespace HotelManagementSystemOOP
                                             "RateID INTEGER, " +
                                             "RoomType VARCHAR(20), " +
                                             "RoomNumber INTEGER, " +
+                                            "CheckInTime VARCHAR(20), " +
+                                            "CheckOutTime VARCHAR(20), " +
                                             "CheckInDate VARCHAR(20), " +
                                             "CheckOutDate VARCHAR(20), " +
                                             "Status VARCHAR(20), " +
@@ -186,12 +188,14 @@ namespace HotelManagementSystemOOP
                         long RateID = (long)rateidObj;
 
                         // Insert booking data
-                        cmd.CommandText = "INSERT INTO Booking(GuestID,RateID, RoomType, RoomNumber, CheckInDate, CheckOutDate, Status, CreatedDate) " +
-                                          "VALUES (@guestId, @rateid, @roomtype, @roomnumber, @checkindate, @checkoutdate, @status, datetime('now', 'localtime'))";
+                        cmd.CommandText = "INSERT INTO Booking(GuestID,RateID, RoomType, RoomNumber, CheckInTime, CheckOutTime, CheckInDate, CheckOutDate, Status, CreatedDate) " +
+                                          "VALUES (@guestId, @rateid, @roomtype, @roomnumber, @checkintime, @checkouttime, @checkindate, @checkoutdate, @status, datetime('now', 'localtime'))";
                         cmd.Parameters.AddWithValue("@guestId", guestId);
                         cmd.Parameters.AddWithValue("@rateid", RateID);
                         cmd.Parameters.AddWithValue("@roomtype", RoomTypeDropdownBF.Text);
                         cmd.Parameters.AddWithValue("@roomnumber", roomNumber);
+                        cmd.Parameters.AddWithValue("@checkintime", CheckInTime.Text);
+                        cmd.Parameters.AddWithValue("@checkouttime", CheckOutTime.Text);
                         cmd.Parameters.AddWithValue("@checkindate", dateTimeCheckIn.Text);
                         cmd.Parameters.AddWithValue("@checkoutdate", dateTimeCheckOut.Text);
                         cmd.Parameters.AddWithValue("@status", status);
@@ -386,6 +390,11 @@ namespace HotelManagementSystemOOP
         }
 
         private void CheckInTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

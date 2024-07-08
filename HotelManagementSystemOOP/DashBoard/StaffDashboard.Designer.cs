@@ -119,11 +119,11 @@
             NewBookingTodayNumber.BackColor = System.Drawing.Color.Transparent;
             NewBookingTodayNumber.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             NewBookingTodayNumber.ForeColor = System.Drawing.Color.White;
-            NewBookingTodayNumber.Location = new System.Drawing.Point(70, 22);
+            NewBookingTodayNumber.Location = new System.Drawing.Point(86, 22);
             NewBookingTodayNumber.Name = "NewBookingTodayNumber";
-            NewBookingTodayNumber.Size = new System.Drawing.Size(68, 27);
+            NewBookingTodayNumber.Size = new System.Drawing.Size(26, 27);
             NewBookingTodayNumber.TabIndex = 1;
-            NewBookingTodayNumber.Text = "####";
+            NewBookingTodayNumber.Text = "#";
             NewBookingTodayNumber.Click += label1_Click_1;
             // 
             // ArrvingTodayNumber
@@ -132,11 +132,11 @@
             ArrvingTodayNumber.BackColor = System.Drawing.Color.Transparent;
             ArrvingTodayNumber.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             ArrvingTodayNumber.ForeColor = System.Drawing.Color.White;
-            ArrvingTodayNumber.Location = new System.Drawing.Point(78, 21);
+            ArrvingTodayNumber.Location = new System.Drawing.Point(101, 21);
             ArrvingTodayNumber.Name = "ArrvingTodayNumber";
-            ArrvingTodayNumber.Size = new System.Drawing.Size(68, 27);
+            ArrvingTodayNumber.Size = new System.Drawing.Size(26, 27);
             ArrvingTodayNumber.TabIndex = 0;
-            ArrvingTodayNumber.Text = "####";
+            ArrvingTodayNumber.Text = "#";
             ArrvingTodayNumber.Click += NewBookingNumber_Click;
             // 
             // panel2
@@ -196,11 +196,11 @@
             CurrentStaying.BackColor = System.Drawing.Color.Transparent;
             CurrentStaying.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             CurrentStaying.ForeColor = System.Drawing.Color.White;
-            CurrentStaying.Location = new System.Drawing.Point(70, 21);
+            CurrentStaying.Location = new System.Drawing.Point(101, 21);
             CurrentStaying.Name = "CurrentStaying";
-            CurrentStaying.Size = new System.Drawing.Size(68, 27);
+            CurrentStaying.Size = new System.Drawing.Size(26, 27);
             CurrentStaying.TabIndex = 1;
-            CurrentStaying.Text = "####";
+            CurrentStaying.Text = "#";
             CurrentStaying.Click += CurrentStaying_Click;
             // 
             // CurrentlyStayingNumber
@@ -245,11 +245,11 @@
             DepartingTodayNumber.BackColor = System.Drawing.Color.Transparent;
             DepartingTodayNumber.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             DepartingTodayNumber.ForeColor = System.Drawing.Color.White;
-            DepartingTodayNumber.Location = new System.Drawing.Point(76, 21);
+            DepartingTodayNumber.Location = new System.Drawing.Point(100, 21);
             DepartingTodayNumber.Name = "DepartingTodayNumber";
-            DepartingTodayNumber.Size = new System.Drawing.Size(68, 27);
+            DepartingTodayNumber.Size = new System.Drawing.Size(26, 27);
             DepartingTodayNumber.TabIndex = 1;
-            DepartingTodayNumber.Text = "####";
+            DepartingTodayNumber.Text = "#";
             DepartingTodayNumber.Click += DepartingTodayNumber_Click;
             // 
             // ArrvingListPanelSD
@@ -304,11 +304,11 @@
             dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(148, 118, 95);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 40;
@@ -322,22 +322,24 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = System.Drawing.SystemColors.ControlDark;
+            dataGridView1.GridColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridView1.Location = new System.Drawing.Point(3, 4);
             dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 70;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowTemplate.Height = 24;
             dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;

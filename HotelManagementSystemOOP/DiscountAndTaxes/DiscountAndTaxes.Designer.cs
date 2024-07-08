@@ -66,6 +66,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.ForeColor = System.Drawing.Color.White;
             label1.Location = new System.Drawing.Point(12, 37);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(188, 47);
@@ -77,6 +78,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label2.ForeColor = System.Drawing.Color.White;
             label2.Location = new System.Drawing.Point(25, 457);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(129, 47);
@@ -102,6 +104,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewDiscount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewDiscount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewDiscount.BackgroundColor = System.Drawing.Color.FromArgb(61, 41, 31);
             dataGridViewDiscount.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -164,6 +167,7 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewTax.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewTax.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewTax.BackgroundColor = System.Drawing.Color.FromArgb(61, 41, 31);
             dataGridViewTax.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -208,7 +212,7 @@
             // 
             // AddDiscount
             // 
-            AddDiscount.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            AddDiscount.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             AddDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             AddDiscount.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             AddDiscount.ForeColor = System.Drawing.Color.White;
@@ -222,7 +226,7 @@
             // 
             // AddTax
             // 
-            AddTax.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            AddTax.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             AddTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             AddTax.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             AddTax.ForeColor = System.Drawing.Color.White;
@@ -236,6 +240,7 @@
             // 
             // panel3
             // 
+            panel3.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             panel3.Controls.Add(SuiteRate);
             panel3.Controls.Add(DeluxeRate);
             panel3.Controls.Add(StandardRate);
@@ -289,6 +294,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.ForeColor = System.Drawing.Color.White;
             label6.Location = new System.Drawing.Point(53, 204);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(42, 20);
@@ -298,6 +304,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = System.Drawing.Color.White;
             label5.Location = new System.Drawing.Point(53, 116);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(55, 20);
@@ -307,6 +314,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.ForeColor = System.Drawing.Color.White;
             label4.Location = new System.Drawing.Point(53, 51);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(69, 20);
@@ -316,16 +324,19 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(678, 60);
+            label3.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label3.ForeColor = System.Drawing.Color.White;
+            label3.Location = new System.Drawing.Point(681, 37);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(89, 20);
-            label3.TabIndex = 8;
-            label3.Text = "Room Rates";
+            label3.Size = new System.Drawing.Size(270, 47);
+            label3.TabIndex = 7;
+            label3.Text = "ROOM RATES";
             // 
             // DiscountAndTaxes
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             ClientSize = new System.Drawing.Size(1323, 868);
             Controls.Add(label3);
             Controls.Add(panel3);
