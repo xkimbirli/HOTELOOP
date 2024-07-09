@@ -56,18 +56,18 @@ namespace HotelManagementSystemOOP
                                             "BookingID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                                             "GuestID INTEGER, " +
                                             "RateID INTEGER, " +
+
                                             "RoomType VARCHAR(20), " +
                                             "RoomNumber INTEGER, " +
                                             "CheckInTime VARCHAR(20), " +
                                             "CheckOutTime VARCHAR(20), " +
-                                            "CheckInDate VARCHAR(20), " +
-                                            "CheckOutDate VARCHAR(20), " +
+                                            "CheckInDate DATE(20), " +
+                                            "CheckOutDate DATE(20), " +
                                             "Status VARCHAR(20), " +
                                             //  "Duration, "+
                                             "CreatedDate DATETIME, " +
                                             "FOREIGN KEY(GuestID) REFERENCES Guest(GuestID), " +
-
-                                            "FOREIGN KEY(RateID) REFERENCES Rate(RateID))";
+                                           "FOREIGN KEY(RateID) REFERENCES Rate(RateID))";
                         using (SQLiteCommand commandBooking = new SQLiteCommand(sqlBooking, sqlite))
                         {
                             commandBooking.ExecuteNonQuery();
@@ -175,6 +175,7 @@ namespace HotelManagementSystemOOP
                         // Always set status as Reserved
                         string status = "Reserved";
 
+
                         cmd.CommandText = "SELECT RateID FROM Rate";
                         //cmd.Parameters.AddWithValue("@discountcoupon", DiscountCoupon.Text);
                         object rateidObj = cmd.ExecuteScalar();
@@ -187,17 +188,20 @@ namespace HotelManagementSystemOOP
 
                         long RateID = (long)rateidObj;
 
+                        string checkInTimeFormatted = CheckInTime.Value.ToString("hh:mm tt");
+                        string checkOutTimeFormatted = CheckOutTime.Value.ToString("hh:mm tt");
+
                         // Insert booking data
-                        cmd.CommandText = "INSERT INTO Booking(GuestID,RateID, RoomType, RoomNumber, CheckInTime, CheckOutTime, CheckInDate, CheckOutDate, Status, CreatedDate) " +
-                                          "VALUES (@guestId, @rateid, @roomtype, @roomnumber, @checkintime, @checkouttime, @checkindate, @checkoutdate, @status, datetime('now', 'localtime'))";
+                        cmd.CommandText = "INSERT INTO Booking(GuestID, RateID, RoomType, RoomNumber, CheckInTime, CheckOutTime, CheckInDate, CheckOutDate, Status, CreatedDate) " +
+                         "VALUES (@guestId, @rateid, @roomtype, @roomnumber, @checkintime, @checkouttime, @checkindate, @checkoutdate, @status, datetime('now', 'localtime'))";
                         cmd.Parameters.AddWithValue("@guestId", guestId);
                         cmd.Parameters.AddWithValue("@rateid", RateID);
                         cmd.Parameters.AddWithValue("@roomtype", RoomTypeDropdownBF.Text);
                         cmd.Parameters.AddWithValue("@roomnumber", roomNumber);
-                        cmd.Parameters.AddWithValue("@checkintime", CheckInTime.Text);
-                        cmd.Parameters.AddWithValue("@checkouttime", CheckOutTime.Text);
-                        cmd.Parameters.AddWithValue("@checkindate", dateTimeCheckIn.Text);
-                        cmd.Parameters.AddWithValue("@checkoutdate", dateTimeCheckOut.Text);
+                        cmd.Parameters.AddWithValue("@checkintime", checkInTimeFormatted);
+                        cmd.Parameters.AddWithValue("@checkouttime", checkOutTimeFormatted);
+                        cmd.Parameters.AddWithValue("@checkindate", dateTimeCheckIn.Value.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@checkoutdate", dateTimeCheckOut.Value.ToString("yyyy-MM-dd"));
                         cmd.Parameters.AddWithValue("@status", status);
                         cmd.ExecuteNonQuery();
 
@@ -325,9 +329,11 @@ namespace HotelManagementSystemOOP
 
         private void dateTimeCheckIn_ValueChanged(object sender, EventArgs e)
         {
+
         }
         private void dateTimeCheckOut_ValueChanged(object sender, EventArgs e)
         {
+
         }
         private void NationalitDropdownBF_TextChanged(object sender, EventArgs e) { }
         private void label15_Click(object sender, EventArgs e) { }
@@ -400,4 +406,3 @@ namespace HotelManagementSystemOOP
         }
     }
 }
-

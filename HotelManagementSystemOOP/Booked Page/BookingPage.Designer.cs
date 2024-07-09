@@ -241,7 +241,7 @@
             // 
             pictureBox2.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Location = new System.Drawing.Point(1038, 12);
+            pictureBox2.Location = new System.Drawing.Point(1039, 26);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(227, 143);
             pictureBox2.TabIndex = 13;
@@ -252,7 +252,7 @@
             // 
             monthCalendar1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             monthCalendar1.ForeColor = System.Drawing.SystemColors.WindowText;
-            monthCalendar1.Location = new System.Drawing.Point(1022, 167);
+            monthCalendar1.Location = new System.Drawing.Point(1021, 181);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.RightToLeftLayout = true;
             monthCalendar1.TabIndex = 14;
@@ -262,10 +262,10 @@
             // 
             dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(61, 41, 31);
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new System.Drawing.Point(1003, 386);
+            dataGridView1.Location = new System.Drawing.Point(1003, 420);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new System.Drawing.Size(296, 402);
+            dataGridView1.Size = new System.Drawing.Size(296, 410);
             dataGridView1.TabIndex = 15;
             // 
             // BookingPage

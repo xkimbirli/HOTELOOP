@@ -43,12 +43,13 @@
             // 
             // ExitAddDiscount
             // 
-            ExitAddDiscount.Location = new System.Drawing.Point(525, 12);
+            ExitAddDiscount.BackColor = System.Drawing.Color.Transparent;
+            ExitAddDiscount.Location = new System.Drawing.Point(525, 32);
             ExitAddDiscount.Name = "ExitAddDiscount";
             ExitAddDiscount.Size = new System.Drawing.Size(33, 29);
             ExitAddDiscount.TabIndex = 6;
             ExitAddDiscount.Text = "x";
-            ExitAddDiscount.UseVisualStyleBackColor = true;
+            ExitAddDiscount.UseVisualStyleBackColor = false;
             ExitAddDiscount.Click += ExitAddDiscount_Click;
             // 
             // label1
@@ -63,7 +64,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = System.Drawing.Color.White;
+            panel2.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             panel2.Controls.Add(DiscountPercentage);
             panel2.Controls.Add(DiscountDescription);
             panel2.Controls.Add(DiscountName);
@@ -71,7 +72,7 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
-            panel2.Location = new System.Drawing.Point(12, 75);
+            panel2.Location = new System.Drawing.Point(12, 84);
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(546, 296);
             panel2.TabIndex = 10;
@@ -114,7 +115,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = System.Drawing.SystemColors.Window;
+            label5.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label5.Location = new System.Drawing.Point(21, 169);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(173, 20);
@@ -144,17 +145,17 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(570, 409);
+            BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            ClientSize = new System.Drawing.Size(586, 454);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(ExitAddDiscount);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             MaximumSize = new System.Drawing.Size(588, 456);
             MinimumSize = new System.Drawing.Size(588, 456);
             Name = "AddDiscount";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "AddDiscount";
             Load += AddDiscount_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

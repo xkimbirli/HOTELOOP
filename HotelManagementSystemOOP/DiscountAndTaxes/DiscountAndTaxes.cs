@@ -34,7 +34,7 @@ namespace HotelManagementSystemOOP
 
         private void DiscountAndTaxes_Load(object sender, EventArgs e)
         {
-            Load_Discounts();
+            //Load_Discounts();
             Load_Tax();
             Create_db();
             LoadRates();
@@ -96,7 +96,7 @@ namespace HotelManagementSystemOOP
                 con.Close();
             }
         }
-        public void Load_Discounts()
+       /* public void Load_Discounts()
         {
             try
             {
@@ -124,7 +124,7 @@ namespace HotelManagementSystemOOP
             {
                 con.Close();
             }
-        }
+        }*/
 
         public void Load_Tax()
         {

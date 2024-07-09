@@ -8,9 +8,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Invoice Pages\AddExtraAmountPayment.cs" />
-    <Compile Update="Invoice Pages\AddPaymentTab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Booked Page\BpTabAllRooms.cs" />
     <Compile Update="Booked Page\BpTabDeluxeRooms.cs">
       <SubType>UserControl</SubType>
@@ -40,9 +37,7 @@
     <Compile Update="RoomIn forms Edit Form\StandardRoomInfoEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Booking List\SuiteRoomBookedListTab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="Booking List\SuiteRoomBookedListTab.cs" />
     <Compile Update="RoomIn forms Edit Form\SuiteRoomInfoEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>

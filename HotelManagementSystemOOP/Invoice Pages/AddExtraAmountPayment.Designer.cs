@@ -76,7 +76,7 @@
             panel2.Controls.Add(BookingIDAEA);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
-            panel2.Location = new System.Drawing.Point(27, 80);
+            panel2.Location = new System.Drawing.Point(27, 74);
             panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(872, 591);
@@ -89,12 +89,14 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new System.Drawing.Size(307, 27);
             dateTimePicker1.TabIndex = 31;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label7.Location = new System.Drawing.Point(270, 28);
+            label7.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            label7.Location = new System.Drawing.Point(288, 25);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(295, 37);
             label7.TabIndex = 30;
@@ -103,7 +105,7 @@
             // 
             // SaveEtraAddAmount
             // 
-            SaveEtraAddAmount.BackColor = System.Drawing.Color.Black;
+            SaveEtraAddAmount.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             SaveEtraAddAmount.FlatAppearance.BorderSize = 0;
             SaveEtraAddAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SaveEtraAddAmount.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
@@ -115,6 +117,7 @@
             SaveEtraAddAmount.TabIndex = 29;
             SaveEtraAddAmount.Text = "SAVE\r\n";
             SaveEtraAddAmount.UseVisualStyleBackColor = false;
+            SaveEtraAddAmount.Click += SaveEtraAddAmount_Click;
             // 
             // InvoiceNumberAEA
             // 
@@ -141,7 +144,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label13.ForeColor = System.Drawing.Color.Black;
+            label13.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
             label13.Location = new System.Drawing.Point(99, 264);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(118, 21);
@@ -164,7 +167,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label12.ForeColor = System.Drawing.Color.Black;
+            label12.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
             label12.Location = new System.Drawing.Point(99, 196);
             label12.Name = "label12";
             label12.Size = new System.Drawing.Size(143, 21);
@@ -176,7 +179,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label11.ForeColor = System.Drawing.Color.Black;
+            label11.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
             label11.Location = new System.Drawing.Point(99, 329);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(156, 21);
@@ -188,7 +191,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label10.ForeColor = System.Drawing.Color.Black;
+            label10.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
             label10.Location = new System.Drawing.Point(97, 125);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(146, 21);
@@ -222,7 +225,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label9.ForeColor = System.Drawing.Color.Black;
+            label9.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
             label9.Location = new System.Drawing.Point(96, 468);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(76, 21);
@@ -234,7 +237,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label8.ForeColor = System.Drawing.Color.Black;
+            label8.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
             label8.Location = new System.Drawing.Point(99, 400);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(122, 21);
@@ -246,10 +249,13 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             ClientSize = new System.Drawing.Size(923, 688);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(button1);
+            ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "AddExtraAmountPayment";
             Load += AddExtraAmountPayment_Load;

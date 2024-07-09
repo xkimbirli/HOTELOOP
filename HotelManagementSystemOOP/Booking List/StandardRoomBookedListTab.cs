@@ -169,7 +169,7 @@ namespace HotelManagementSystemOOP
                         {
                             command.Parameters.AddWithValue("@RoomNumber", roomNumber);
                             command.Parameters.AddWithValue("@RoomType", roomType);
-                            command.Parameters.AddWithValue("@GuestName", guestName);
+                            //command.Parameters.AddWithValue("@GuestName", guestName);
                             command.ExecuteNonQuery();
                         }
 
@@ -189,9 +189,66 @@ namespace HotelManagementSystemOOP
                 }
             }
             else if (e.RowIndex >= 0 && dataGridView1.Columns["ExtendButton"] != null && e.ColumnIndex == dataGridView1.Columns["ExtendButton"].Index)
-            {
-                // Handle extension button action here
-            }
+            {// Handle Extend button click
+                string roomNumber = dataGridView1.Rows[e.RowIndex].Cells["RoomNumber"].Value?.ToString();
+                string guestName = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
+
+                try
+                {
+                    using (var connection = new SQLiteConnection("Data Source=TOTOO.db"))
+                    {
+                        connection.Open();
+
+                        // Fetch additional booking details
+                        string bookingDetailsQuery = @"
+                                                     SELECT 
+                                                      b.BookingID, 
+                                                      b.RoomType, 
+                                                      b.CheckOutDate, 
+                                                      ra.RateID
+                                                         FROM 
+                                                         Booking b
+                                                      JOIN 
+                                                       Rate ra ON b.RateID = ra.RateID
+                                                      WHERE 
+                                                      b.RoomNumber = @RoomNumber";
+
+                        int bookingID = 0;
+                        string roomType = "";
+                        DateTime checkOutDate = DateTime.MinValue;
+                        int rateID = 0;
+
+                        using (var command = new SQLiteCommand(bookingDetailsQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@RoomNumber", roomNumber);
+                            using (var reader = command.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    bookingID = Convert.ToInt32(reader["BookingID"]);
+                                    roomType = reader["RoomType"].ToString();
+                                    checkOutDate = Convert.ToDateTime(reader["CheckOutDate"]);
+                                    rateID = Convert.ToInt32(reader["RateID"]);
+                                }
+                            }
+                        }
+
+                        // Example: Navigate to AddExtraAmountPayment form and pass data
+                        AddExtraAmountPayment extraAmountPaymentForm = new AddExtraAmountPayment(bookingID, roomType, checkOutDate, rateID);
+                        extraAmountPaymentForm.Show();
+
+                        // Close the current form (StandardRoomBookedListTab UserControl)
+                        Form parentForm = this.FindForm();
+                        parentForm.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
+
+        }
         }
 
         public void PerformSearch(string guestName, string roomNumber)

@@ -21,5 +21,10 @@ namespace HotelManagementSystemOOP
         {
 
         }
+
+        private void PrintOccupancyReport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

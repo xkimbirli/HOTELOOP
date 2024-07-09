@@ -30,12 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralSettings));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             label1 = new System.Windows.Forms.Label();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
             panel1 = new System.Windows.Forms.Panel();
             button1 = new System.Windows.Forms.Button();
             pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -60,7 +59,6 @@
             AddRooms = new System.Windows.Forms.Button();
             AddFloors = new System.Windows.Forms.Button();
             AddRoomRoomTypeDD = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
@@ -70,7 +68,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = System.Drawing.SystemColors.Window;
+            label1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.Black;
             label1.Location = new System.Drawing.Point(22, 34);
@@ -79,20 +77,9 @@
             label1.TabIndex = 0;
             label1.Text = "General Setting ";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox1.Location = new System.Drawing.Point(277, 19);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(42, 76);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
             // panel1
             // 
-            panel1.BackColor = System.Drawing.Color.Gray;
+            panel1.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(SaveButtonGS);
@@ -114,7 +101,7 @@
             // 
             // button1
             // 
-            button1.BackColor = System.Drawing.Color.Black;
+            button1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.ForeColor = System.Drawing.Color.White;
@@ -140,7 +127,7 @@
             // 
             // SaveButtonGS
             // 
-            SaveButtonGS.BackColor = System.Drawing.Color.Black;
+            SaveButtonGS.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             SaveButtonGS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             SaveButtonGS.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             SaveButtonGS.ForeColor = System.Drawing.Color.White;
@@ -278,7 +265,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = System.Drawing.SystemColors.Control;
+            panel2.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new System.Drawing.Point(20, 500);
             panel2.Name = "panel2";
@@ -290,52 +277,56 @@
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(148, 118, 95);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = System.Drawing.SystemColors.ControlDark;
+            dataGridView1.GridColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridView1.Location = new System.Drawing.Point(16, 34);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            dataGridView1.Size = new System.Drawing.Size(588, 312);
+            dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new System.Drawing.Size(592, 312);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             // 
             // panel3
             // 
-            panel3.BackColor = System.Drawing.SystemColors.Control;
+            panel3.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             panel3.Location = new System.Drawing.Point(674, 502);
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(626, 356);
@@ -368,7 +359,8 @@
             // 
             // AddRooms
             // 
-            AddRooms.BackColor = System.Drawing.Color.Black;
+            AddRooms.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            AddRooms.FlatAppearance.BorderSize = 0;
             AddRooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             AddRooms.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             AddRooms.Location = new System.Drawing.Point(1266, 456);
@@ -381,7 +373,8 @@
             // 
             // AddFloors
             // 
-            AddFloors.BackColor = System.Drawing.Color.Black;
+            AddFloors.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            AddFloors.FlatAppearance.BorderSize = 0;
             AddFloors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             AddFloors.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             AddFloors.Location = new System.Drawing.Point(606, 456);
@@ -406,7 +399,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = System.Drawing.Color.White;
+            BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             ClientSize = new System.Drawing.Size(1323, 868);
             Controls.Add(AddRoomRoomTypeDD);
             Controls.Add(AddFloors);
@@ -417,16 +410,15 @@
             Controls.Add(panel3);
             Controls.Add(DashboardButtonGS);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
             Controls.Add(label1);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            ForeColor = System.Drawing.SystemColors.ControlText;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             MaximumSize = new System.Drawing.Size(1341, 915);
             MinimumSize = new System.Drawing.Size(1341, 915);
             Name = "GeneralSettings";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Load += GeneralSettings_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -439,7 +431,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Overview;

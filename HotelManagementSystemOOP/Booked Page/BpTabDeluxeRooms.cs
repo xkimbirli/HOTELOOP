@@ -17,8 +17,10 @@ namespace HotelManagementSystemOOP
         public BpTabDeluxeRooms()
         {
             InitializeComponent();
-        }
+            // Initialize the UserControl
+           
 
+        }
         private void BpTabDeluxeRooms_Load(object sender, EventArgs e)
         {
             LoadRoomData();
@@ -35,9 +37,12 @@ namespace HotelManagementSystemOOP
                                         "JOIN Floor f ON f.FloorID = r.FloorID " +
                                         "WHERE r.RoomType = 'Deluxe';";
 
+                    
 
                     using (var command = new SQLiteCommand(selectQuery, connection))
                     {
+                  
+
                         using (var adapter = new SQLiteDataAdapter(command))
                         {
                             DataTable dataTable = new DataTable();
@@ -79,6 +84,11 @@ namespace HotelManagementSystemOOP
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void StatusDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -53,7 +53,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = System.Drawing.Color.White;
+            panel1.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             panel1.Controls.Add(FloorNumber);
             panel1.Controls.Add(FloorName);
             panel1.Controls.Add(FloorStatus);
@@ -150,17 +150,17 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(570, 409);
+            BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            ClientSize = new System.Drawing.Size(570, 438);
             ControlBox = false;
             Controls.Add(ExitAddFloors);
             Controls.Add(panel1);
             Controls.Add(label1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             MaximumSize = new System.Drawing.Size(588, 456);
             MinimumSize = new System.Drawing.Size(588, 456);
             Name = "AddFloor";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "AddFloor";
             Load += AddFloor_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

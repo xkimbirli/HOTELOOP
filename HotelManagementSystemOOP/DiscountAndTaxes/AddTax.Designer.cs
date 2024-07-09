@@ -43,19 +43,21 @@
             // 
             // ExitAddTax
             // 
-            ExitAddTax.Location = new System.Drawing.Point(525, 12);
+            ExitAddTax.BackColor = System.Drawing.Color.Transparent;
+            ExitAddTax.Location = new System.Drawing.Point(536, 37);
             ExitAddTax.Name = "ExitAddTax";
             ExitAddTax.Size = new System.Drawing.Size(33, 29);
             ExitAddTax.TabIndex = 6;
             ExitAddTax.Text = "x";
-            ExitAddTax.UseVisualStyleBackColor = true;
+            ExitAddTax.UseVisualStyleBackColor = false;
             ExitAddTax.Click += ExitAddTax_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.Location = new System.Drawing.Point(12, 21);
+            label1.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            label1.Location = new System.Drawing.Point(12, 37);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(136, 34);
             label1.TabIndex = 8;
@@ -63,7 +65,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = System.Drawing.Color.White;
+            panel1.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             panel1.Controls.Add(TaxPercentage);
             panel1.Controls.Add(TaxDescription);
             panel1.Controls.Add(TaxName);
@@ -71,7 +73,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Location = new System.Drawing.Point(12, 71);
+            panel1.Location = new System.Drawing.Point(23, 92);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(546, 296);
             panel1.TabIndex = 9;
@@ -114,7 +116,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = System.Drawing.SystemColors.Window;
+            label4.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            label4.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
             label4.Location = new System.Drawing.Point(21, 169);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(127, 20);
@@ -124,6 +127,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
             label3.Location = new System.Drawing.Point(18, 102);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(130, 20);
@@ -134,6 +138,7 @@
             // 
             label2.AutoSize = true;
             label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label2.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
             label2.Location = new System.Drawing.Point(18, 41);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(81, 20);
@@ -144,17 +149,16 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(570, 409);
+            BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            ClientSize = new System.Drawing.Size(588, 428);
             ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(ExitAddTax);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             MaximumSize = new System.Drawing.Size(588, 456);
-            MinimumSize = new System.Drawing.Size(588, 456);
             Name = "AddTax";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "AddTax";
             Load += AddTax_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

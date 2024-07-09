@@ -22,7 +22,7 @@ namespace HotelManagementSystemOOP
             InitializeComponent();
             this.logIn = logIn;
 
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+           // pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -45,9 +45,9 @@ namespace HotelManagementSystemOOP
             UpdateTotalEmployeesLabel();
 
             UpdateTotalFloorsLabel();
-            DisplayLatestHotelLogo();
+           // DisplayLatestHotelLogo();
         }
-        private void DisplayLatestHotelLogo()
+        /*private void DisplayLatestHotelLogo()
         {
             using (var con = new SQLiteConnection(cs))
             {
@@ -84,7 +84,8 @@ namespace HotelManagementSystemOOP
                     }
                 }
             }
-        }
+        }*/
+
         private void UpdateTotalFloorsLabel()
         {
             using (var con = new SQLiteConnection("URI=file:" + Application.StartupPath + "\\TOTOO.db"))
@@ -222,9 +223,5 @@ namespace HotelManagementSystemOOP
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

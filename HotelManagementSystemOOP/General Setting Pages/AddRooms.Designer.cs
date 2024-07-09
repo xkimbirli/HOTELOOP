@@ -43,7 +43,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = System.Drawing.Color.White;
+            panel1.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             panel1.Controls.Add(AddRoomDropdown);
             panel1.Controls.Add(RoomNumber);
             panel1.Controls.Add(FloorNumberAddRooms);
@@ -51,7 +51,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Location = new System.Drawing.Point(12, 83);
+            panel1.Location = new System.Drawing.Point(27, 83);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(531, 296);
             panel1.TabIndex = 2;
@@ -149,17 +149,17 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(570, 409);
+            BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            ClientSize = new System.Drawing.Size(570, 438);
             ControlBox = false;
             Controls.Add(ExitAddRooms);
             Controls.Add(Rooms);
             Controls.Add(panel1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             MaximumSize = new System.Drawing.Size(588, 456);
             MinimumSize = new System.Drawing.Size(588, 456);
             Name = "AddRooms";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "AddRooms";
             Load += AddRooms_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

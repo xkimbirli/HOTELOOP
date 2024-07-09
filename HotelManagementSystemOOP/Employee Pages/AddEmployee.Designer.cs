@@ -75,6 +75,7 @@
             // 
             EmployeeName.AutoSize = true;
             EmployeeName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            EmployeeName.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             EmployeeName.Location = new System.Drawing.Point(17, 58);
             EmployeeName.Name = "EmployeeName";
             EmployeeName.Size = new System.Drawing.Size(65, 19);
@@ -96,6 +97,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label1.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label1.Location = new System.Drawing.Point(430, 273);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(76, 19);
@@ -106,6 +108,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label2.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label2.Location = new System.Drawing.Point(18, 227);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(149, 19);
@@ -116,6 +119,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label3.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label3.Location = new System.Drawing.Point(18, 273);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(130, 19);
@@ -126,6 +130,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label4.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label4.Location = new System.Drawing.Point(17, 409);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(92, 19);
@@ -136,6 +141,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label5.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label5.Location = new System.Drawing.Point(18, 363);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(99, 19);
@@ -146,6 +152,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label6.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label6.Location = new System.Drawing.Point(18, 318);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(70, 19);
@@ -156,6 +163,7 @@
             // 
             SexAE.AutoSize = true;
             SexAE.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            SexAE.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             SexAE.Location = new System.Drawing.Point(18, 100);
             SexAE.Name = "SexAE";
             SexAE.Size = new System.Drawing.Size(44, 19);
@@ -166,6 +174,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label8.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label8.Location = new System.Drawing.Point(18, 183);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(49, 19);
@@ -176,6 +185,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label9.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label9.Location = new System.Drawing.Point(17, 143);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(85, 19);
@@ -186,6 +196,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label10.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label10.Location = new System.Drawing.Point(430, 317);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(89, 19);
@@ -196,6 +207,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            label11.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label11.Location = new System.Drawing.Point(430, 364);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(128, 19);
@@ -300,7 +312,7 @@
             // 
             // UploadPhotoButtonAE
             // 
-            UploadPhotoButtonAE.BackColor = System.Drawing.Color.DarkGray;
+            UploadPhotoButtonAE.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             UploadPhotoButtonAE.FlatAppearance.BorderSize = 0;
             UploadPhotoButtonAE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             UploadPhotoButtonAE.ForeColor = System.Drawing.Color.White;
@@ -314,17 +326,18 @@
             // 
             // ExitButtonAE
             // 
+            ExitButtonAE.BackColor = System.Drawing.Color.Transparent;
             ExitButtonAE.Location = new System.Drawing.Point(772, 12);
             ExitButtonAE.Name = "ExitButtonAE";
             ExitButtonAE.Size = new System.Drawing.Size(32, 29);
             ExitButtonAE.TabIndex = 26;
             ExitButtonAE.Text = "x";
-            ExitButtonAE.UseVisualStyleBackColor = true;
+            ExitButtonAE.UseVisualStyleBackColor = false;
             ExitButtonAE.Click += ExitButtonAE_Click;
             // 
             // SaveEditEmployeeInfoButton
             // 
-            SaveEditEmployeeInfoButton.BackColor = System.Drawing.Color.Black;
+            SaveEditEmployeeInfoButton.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             SaveEditEmployeeInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SaveEditEmployeeInfoButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             SaveEditEmployeeInfoButton.ForeColor = System.Drawing.Color.White;
@@ -340,7 +353,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.White;
+            BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             ClientSize = new System.Drawing.Size(816, 473);
             ControlBox = false;
             Controls.Add(SaveEditEmployeeInfoButton);
@@ -371,9 +384,9 @@
             Controls.Add(EmployeeNameAE);
             Controls.Add(EmployeeName);
             Controls.Add(EmployeePic);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Name = "AddEmployee";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "AddEmployee";
             Load += AddEmployee_Load;
             ((System.ComponentModel.ISupportInitialize)EmployeePic).EndInit();
             ResumeLayout(false);

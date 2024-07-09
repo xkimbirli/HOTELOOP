@@ -91,7 +91,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-            label9.Location = new System.Drawing.Point(12, 151);
+            label9.Location = new System.Drawing.Point(12, 148);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(85, 19);
             label9.TabIndex = 30;
@@ -191,7 +191,7 @@
             // 
             EmployeePicEI.Image = (System.Drawing.Image)resources.GetObject("EmployeePicEI.Image");
             EmployeePicEI.InitialImage = (System.Drawing.Image)resources.GetObject("EmployeePicEI.InitialImage");
-            EmployeePicEI.Location = new System.Drawing.Point(520, 75);
+            EmployeePicEI.Location = new System.Drawing.Point(520, 64);
             EmployeePicEI.Name = "EmployeePicEI";
             EmployeePicEI.Size = new System.Drawing.Size(194, 145);
             EmployeePicEI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -223,7 +223,7 @@
             // 
             BirthdateEI.AutoSize = true;
             BirthdateEI.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-            BirthdateEI.Location = new System.Drawing.Point(117, 151);
+            BirthdateEI.Location = new System.Drawing.Point(117, 147);
             BirthdateEI.Name = "BirthdateEI";
             BirthdateEI.Size = new System.Drawing.Size(44, 19);
             BirthdateEI.TabIndex = 43;
@@ -352,8 +352,8 @@
             Controls.Add(Sex);
             Controls.Add(EmployeeNameEI);
             Controls.Add(ExitButtonEI);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Name = "EmployeeInfo";
-            Text = "EmployeeInfo";
             ((System.ComponentModel.ISupportInitialize)EmployeePicEI).EndInit();
             ResumeLayout(false);
             PerformLayout();

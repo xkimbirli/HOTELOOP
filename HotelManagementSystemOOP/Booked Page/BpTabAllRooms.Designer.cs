@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             dataGridView1 = new System.Windows.Forms.DataGridView();
-            SearchBarTabAllRooms = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -95,20 +95,23 @@
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // SearchBarTabAllRooms
+            // label1
             // 
-            SearchBarTabAllRooms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            SearchBarTabAllRooms.Location = new System.Drawing.Point(690, 19);
-            SearchBarTabAllRooms.Name = "SearchBarTabAllRooms";
-            SearchBarTabAllRooms.Size = new System.Drawing.Size(256, 27);
-            SearchBarTabAllRooms.TabIndex = 1;
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(13, 14);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(111, 34);
+            label1.TabIndex = 2;
+            label1.Text = "Deluxe";
             // 
             // BpTabAllRooms
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            Controls.Add(SearchBarTabAllRooms);
+            Controls.Add(label1);
             Controls.Add(dataGridView1);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "BpTabAllRooms";
@@ -121,6 +124,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox SearchBarTabAllRooms;
+        private System.Windows.Forms.Label label1;
     }
 }

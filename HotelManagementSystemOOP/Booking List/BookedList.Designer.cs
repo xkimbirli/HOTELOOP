@@ -68,7 +68,7 @@ namespace HotelManagementSystemOOP
             panel2.Location = new System.Drawing.Point(23, 150);
             panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(1268, 683);
+            panel2.Size = new System.Drawing.Size(1275, 683);
             panel2.TabIndex = 12;
             panel2.Paint += panel2_Paint;
             // 
@@ -78,7 +78,7 @@ namespace HotelManagementSystemOOP
             panel3.Controls.Add(DeluxeRoomTabRC);
             panel3.Controls.Add(SuiteRoomRC);
             panel3.Controls.Add(StandardRoomTabRC);
-            panel3.Location = new System.Drawing.Point(21, 93);
+            panel3.Location = new System.Drawing.Point(21, 91);
             panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(316, 58);

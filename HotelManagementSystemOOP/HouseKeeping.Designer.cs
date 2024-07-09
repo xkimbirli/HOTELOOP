@@ -50,6 +50,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.ForeColor = System.Drawing.Color.White;
             label1.Location = new System.Drawing.Point(30, 90);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(324, 47);
@@ -68,7 +69,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = System.Drawing.Color.Black;
+            panel1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             panel1.Controls.Add(label2);
             panel1.Location = new System.Drawing.Point(31, 144);
             panel1.Name = "panel1";
@@ -80,7 +81,7 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label2.ForeColor = System.Drawing.Color.White;
-            label2.Location = new System.Drawing.Point(3, 13);
+            label2.Location = new System.Drawing.Point(3, 12);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(172, 34);
             label2.TabIndex = 1;
@@ -91,7 +92,7 @@
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new System.Drawing.Point(30, 204);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(1259, 532);
+            panel2.Size = new System.Drawing.Size(1259, 569);
             panel2.TabIndex = 3;
             // 
             // dataGridView1
@@ -99,6 +100,7 @@
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -110,53 +112,56 @@
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 40;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tan;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = System.Drawing.SystemColors.ControlDark;
+            dataGridView1.GridColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridView1.Location = new System.Drawing.Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tan;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tan;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new System.Drawing.Size(1259, 532);
+            dataGridView1.Size = new System.Drawing.Size(1259, 569);
             dataGridView1.TabIndex = 0;
             // 
             // ExitHouseKeeping
             // 
-            ExitHouseKeeping.Location = new System.Drawing.Point(1187, 750);
+            ExitHouseKeeping.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
+            ExitHouseKeeping.FlatAppearance.BorderSize = 0;
+            ExitHouseKeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ExitHouseKeeping.Location = new System.Drawing.Point(1195, 779);
             ExitHouseKeeping.Name = "ExitHouseKeeping";
             ExitHouseKeeping.Size = new System.Drawing.Size(94, 29);
             ExitHouseKeeping.TabIndex = 4;
             ExitHouseKeeping.Text = "LOG OUT";
-            ExitHouseKeeping.UseVisualStyleBackColor = true;
+            ExitHouseKeeping.UseVisualStyleBackColor = false;
             ExitHouseKeeping.Click += ExitHouseKeeping_Click_1;
             // 
             // HouseKeeping
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.White;
+            BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
             ClientSize = new System.Drawing.Size(1323, 868);
             Controls.Add(ExitHouseKeeping);
             Controls.Add(panel2);

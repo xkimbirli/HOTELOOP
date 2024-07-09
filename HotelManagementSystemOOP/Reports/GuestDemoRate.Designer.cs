@@ -109,6 +109,7 @@
             PrintOccupancyReport.TabIndex = 15;
             PrintOccupancyReport.Text = "Print";
             PrintOccupancyReport.UseVisualStyleBackColor = true;
+            PrintOccupancyReport.Click += PrintOccupancyReport_Click;
             // 
             // GuestDemoRate
             // 
@@ -125,7 +126,6 @@
             Controls.Add(ExitGuestDemo);
             Controls.Add(label3);
             Name = "GuestDemoRate";
-            Text = "GuestDemoRate";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
