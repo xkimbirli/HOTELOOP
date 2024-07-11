@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
             CheckOut = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
             InvoicePanelDisplay = new System.Windows.Forms.Panel();
             dataGridView1 = new System.Windows.Forms.DataGridView();
-            Discount = new System.Windows.Forms.Label();
             CheckOutDate = new System.Windows.Forms.Label();
             label39 = new System.Windows.Forms.Label();
             label38 = new System.Windows.Forms.Label();
@@ -57,7 +60,6 @@
             PaymentStatus = new System.Windows.Forms.Label();
             label26 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
-            label24 = new System.Windows.Forms.Label();
             PaymentMet = new System.Windows.Forms.Label();
             label21 = new System.Windows.Forms.Label();
             GuestKids = new System.Windows.Forms.Label();
@@ -132,12 +134,12 @@
             button1.TabIndex = 2;
             button1.Text = "Print";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // InvoicePanelDisplay
             // 
             InvoicePanelDisplay.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             InvoicePanelDisplay.Controls.Add(dataGridView1);
-            InvoicePanelDisplay.Controls.Add(Discount);
             InvoicePanelDisplay.Controls.Add(CheckOutDate);
             InvoicePanelDisplay.Controls.Add(label39);
             InvoicePanelDisplay.Controls.Add(label38);
@@ -160,7 +162,6 @@
             InvoicePanelDisplay.Controls.Add(PaymentStatus);
             InvoicePanelDisplay.Controls.Add(label26);
             InvoicePanelDisplay.Controls.Add(label25);
-            InvoicePanelDisplay.Controls.Add(label24);
             InvoicePanelDisplay.Controls.Add(PaymentMet);
             InvoicePanelDisplay.Controls.Add(label21);
             InvoicePanelDisplay.Controls.Add(GuestKids);
@@ -188,27 +189,51 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = System.Drawing.Color.FromArgb(207, 185, 163);
             dataGridView1.Location = new System.Drawing.Point(570, 57);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView1.Size = new System.Drawing.Size(622, 191);
             dataGridView1.TabIndex = 49;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Discount
-            // 
-            Discount.AutoSize = true;
-            Discount.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Discount.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            Discount.Location = new System.Drawing.Point(1108, 343);
-            Discount.Name = "Discount";
-            Discount.Size = new System.Drawing.Size(51, 21);
-            Discount.TabIndex = 48;
-            Discount.Text = "Total";
             // 
             // CheckOutDate
             // 
@@ -393,7 +418,7 @@
             TotalAmount.AutoSize = true;
             TotalAmount.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             TotalAmount.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            TotalAmount.Location = new System.Drawing.Point(1108, 415);
+            TotalAmount.Location = new System.Drawing.Point(1091, 378);
             TotalAmount.Name = "TotalAmount";
             TotalAmount.Size = new System.Drawing.Size(51, 21);
             TotalAmount.TabIndex = 30;
@@ -404,7 +429,7 @@
             ExtraAmount.AutoSize = true;
             ExtraAmount.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             ExtraAmount.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            ExtraAmount.Location = new System.Drawing.Point(1108, 378);
+            ExtraAmount.Location = new System.Drawing.Point(1091, 343);
             ExtraAmount.Name = "ExtraAmount";
             ExtraAmount.Size = new System.Drawing.Size(51, 21);
             ExtraAmount.TabIndex = 29;
@@ -415,7 +440,7 @@
             PaymentMehod.AutoSize = true;
             PaymentMehod.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             PaymentMehod.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            PaymentMehod.Location = new System.Drawing.Point(1111, 307);
+            PaymentMehod.Location = new System.Drawing.Point(1091, 307);
             PaymentMehod.Name = "PaymentMehod";
             PaymentMehod.Size = new System.Drawing.Size(44, 21);
             PaymentMehod.TabIndex = 28;
@@ -426,11 +451,11 @@
             PaymentStatus.AutoSize = true;
             PaymentStatus.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             PaymentStatus.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            PaymentStatus.Location = new System.Drawing.Point(1111, 275);
+            PaymentStatus.Location = new System.Drawing.Point(1084, 275);
             PaymentStatus.Name = "PaymentStatus";
-            PaymentStatus.Size = new System.Drawing.Size(44, 21);
+            PaymentStatus.Size = new System.Drawing.Size(51, 21);
             PaymentStatus.TabIndex = 27;
-            PaymentStatus.Text = "Text";
+            PaymentStatus.Text = "PAID";
             PaymentStatus.Click += PaymentStatus_Click;
             // 
             // label26
@@ -438,7 +463,7 @@
             label26.AutoSize = true;
             label26.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label26.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            label26.Location = new System.Drawing.Point(561, 408);
+            label26.Location = new System.Drawing.Point(564, 378);
             label26.Name = "label26";
             label26.Size = new System.Drawing.Size(125, 22);
             label26.TabIndex = 24;
@@ -449,22 +474,11 @@
             label25.AutoSize = true;
             label25.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label25.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            label25.Location = new System.Drawing.Point(560, 371);
+            label25.Location = new System.Drawing.Point(563, 343);
             label25.Name = "label25";
             label25.Size = new System.Drawing.Size(126, 22);
             label25.TabIndex = 23;
             label25.Text = "Extra Amount";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label24.ForeColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            label24.Location = new System.Drawing.Point(560, 339);
-            label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(86, 22);
-            label24.TabIndex = 22;
-            label24.Text = "Discount";
             // 
             // PaymentMet
             // 
@@ -736,7 +750,6 @@
         private System.Windows.Forms.Label PaymentStatus;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label PaymentMet;
         private System.Windows.Forms.Label GuestAdultNum;
         private System.Windows.Forms.Label GuestEmail;
@@ -753,7 +766,6 @@
         private System.Windows.Forms.Label RoomType;
         private System.Windows.Forms.Label BookingID;
         private System.Windows.Forms.Label GuestKidsNum;
-        private System.Windows.Forms.Label Discount;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

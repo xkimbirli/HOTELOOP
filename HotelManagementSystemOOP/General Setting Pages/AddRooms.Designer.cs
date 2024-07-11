@@ -98,7 +98,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = System.Drawing.SystemColors.Window;
+            label4.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
             label4.Location = new System.Drawing.Point(12, 176);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(107, 20);
@@ -150,7 +150,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
-            ClientSize = new System.Drawing.Size(570, 438);
+            ClientSize = new System.Drawing.Size(586, 454);
             ControlBox = false;
             Controls.Add(ExitAddRooms);
             Controls.Add(Rooms);

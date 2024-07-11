@@ -185,7 +185,8 @@ namespace HotelManagementSystemOOP
 
         private void RevenueReportButtonAD_Click(object sender, EventArgs e)
         {
-
+            GenerateReport generateReport = new GenerateReport(this);
+            generateReport.Show();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

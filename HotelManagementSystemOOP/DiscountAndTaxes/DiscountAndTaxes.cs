@@ -96,35 +96,35 @@ namespace HotelManagementSystemOOP
                 con.Close();
             }
         }
-       /* public void Load_Discounts()
-        {
-            try
-            {
-                con.Open();
+        /* public void Load_Discounts()
+         {
+             try
+             {
+                 con.Open();
 
-                string selectQuery = "SELECT d.DiscountName, d.DiscountCoupon, d.Percentage " +
-                                     "FROM Discount d";
+                 string selectQuery = "SELECT d.DiscountName, d.DiscountCoupon, d.Percentage " +
+                                      "FROM Discount d";
 
-                using (var command = new SQLiteCommand(selectQuery, con))
-                {
-                    using (var adapter = new SQLiteDataAdapter(command))
-                    {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
+                 using (var command = new SQLiteCommand(selectQuery, con))
+                 {
+                     using (var adapter = new SQLiteDataAdapter(command))
+                     {
+                         DataTable dataTable = new DataTable();
+                         adapter.Fill(dataTable);
 
-                        dataGridViewDiscount.DataSource = dataTable;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }*/
+                         dataGridViewDiscount.DataSource = dataTable;
+                     }
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+             finally
+             {
+                 con.Close();
+             }
+         }*/
 
         public void Load_Tax()
         {
@@ -156,7 +156,7 @@ namespace HotelManagementSystemOOP
             }
         }
 
-        
+
 
 
         private void SaveRoomRates_Click(object sender, EventArgs e)
@@ -174,7 +174,7 @@ namespace HotelManagementSystemOOP
         {
             // Optional: Handle panel paint event
         }
-      
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -232,6 +232,11 @@ namespace HotelManagementSystemOOP
             {
                 con.Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
-            OccupancyRateButtonAD = new System.Windows.Forms.Button();
             RevenueReportButtonAD = new System.Windows.Forms.Button();
-            GuestReportButtonAD = new System.Windows.Forms.Button();
             RoomInformationButtonAD = new System.Windows.Forms.Button();
             EmployeeInformationButtonAD = new System.Windows.Forms.Button();
             GenerealSettingButtonAD = new System.Windows.Forms.Button();
             LogOutButtonAD = new System.Windows.Forms.Button();
             panel1 = new System.Windows.Forms.Panel();
+            label7 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
             label5 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -52,47 +51,19 @@
             panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // OccupancyRateButtonAD
-            // 
-            OccupancyRateButtonAD.BackgroundImage = (System.Drawing.Image)resources.GetObject("OccupancyRateButtonAD.BackgroundImage");
-            OccupancyRateButtonAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            OccupancyRateButtonAD.FlatAppearance.BorderSize = 0;
-            OccupancyRateButtonAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            OccupancyRateButtonAD.Location = new System.Drawing.Point(288, 22);
-            OccupancyRateButtonAD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            OccupancyRateButtonAD.Name = "OccupancyRateButtonAD";
-            OccupancyRateButtonAD.Size = new System.Drawing.Size(106, 60);
-            OccupancyRateButtonAD.TabIndex = 1;
-            OccupancyRateButtonAD.UseVisualStyleBackColor = true;
-            OccupancyRateButtonAD.Click += OccupancyRateButtonAD_Click;
-            // 
             // RevenueReportButtonAD
             // 
             RevenueReportButtonAD.BackgroundImage = (System.Drawing.Image)resources.GetObject("RevenueReportButtonAD.BackgroundImage");
             RevenueReportButtonAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             RevenueReportButtonAD.FlatAppearance.BorderSize = 0;
             RevenueReportButtonAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            RevenueReportButtonAD.Location = new System.Drawing.Point(509, 22);
+            RevenueReportButtonAD.Location = new System.Drawing.Point(29, 461);
             RevenueReportButtonAD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             RevenueReportButtonAD.Name = "RevenueReportButtonAD";
-            RevenueReportButtonAD.Size = new System.Drawing.Size(117, 54);
+            RevenueReportButtonAD.Size = new System.Drawing.Size(601, 315);
             RevenueReportButtonAD.TabIndex = 2;
             RevenueReportButtonAD.UseVisualStyleBackColor = true;
             RevenueReportButtonAD.Click += RevenueReportButtonAD_Click;
-            // 
-            // GuestReportButtonAD
-            // 
-            GuestReportButtonAD.BackgroundImage = (System.Drawing.Image)resources.GetObject("GuestReportButtonAD.BackgroundImage");
-            GuestReportButtonAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            GuestReportButtonAD.FlatAppearance.BorderSize = 0;
-            GuestReportButtonAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            GuestReportButtonAD.Location = new System.Drawing.Point(51, 25);
-            GuestReportButtonAD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            GuestReportButtonAD.Name = "GuestReportButtonAD";
-            GuestReportButtonAD.Size = new System.Drawing.Size(127, 58);
-            GuestReportButtonAD.TabIndex = 3;
-            GuestReportButtonAD.UseVisualStyleBackColor = true;
-            GuestReportButtonAD.Click += button3_Click;
             // 
             // RoomInformationButtonAD
             // 
@@ -100,10 +71,10 @@
             RoomInformationButtonAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             RoomInformationButtonAD.FlatAppearance.BorderSize = 0;
             RoomInformationButtonAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            RoomInformationButtonAD.Location = new System.Drawing.Point(960, 20);
+            RoomInformationButtonAD.Location = new System.Drawing.Point(1066, 32);
             RoomInformationButtonAD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             RoomInformationButtonAD.Name = "RoomInformationButtonAD";
-            RoomInformationButtonAD.Size = new System.Drawing.Size(111, 70);
+            RoomInformationButtonAD.Size = new System.Drawing.Size(86, 47);
             RoomInformationButtonAD.TabIndex = 4;
             RoomInformationButtonAD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             RoomInformationButtonAD.UseVisualStyleBackColor = true;
@@ -115,10 +86,10 @@
             EmployeeInformationButtonAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             EmployeeInformationButtonAD.FlatAppearance.BorderSize = 0;
             EmployeeInformationButtonAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            EmployeeInformationButtonAD.Location = new System.Drawing.Point(721, 20);
+            EmployeeInformationButtonAD.Location = new System.Drawing.Point(928, 32);
             EmployeeInformationButtonAD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             EmployeeInformationButtonAD.Name = "EmployeeInformationButtonAD";
-            EmployeeInformationButtonAD.Size = new System.Drawing.Size(123, 63);
+            EmployeeInformationButtonAD.Size = new System.Drawing.Size(93, 47);
             EmployeeInformationButtonAD.TabIndex = 5;
             EmployeeInformationButtonAD.UseVisualStyleBackColor = true;
             EmployeeInformationButtonAD.Click += EmployeeInformationButtonAD_Click;
@@ -129,10 +100,10 @@
             GenerealSettingButtonAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             GenerealSettingButtonAD.FlatAppearance.BorderSize = 0;
             GenerealSettingButtonAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            GenerealSettingButtonAD.Location = new System.Drawing.Point(1166, 26);
+            GenerealSettingButtonAD.Location = new System.Drawing.Point(1205, 37);
             GenerealSettingButtonAD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             GenerealSettingButtonAD.Name = "GenerealSettingButtonAD";
-            GenerealSettingButtonAD.Size = new System.Drawing.Size(94, 64);
+            GenerealSettingButtonAD.Size = new System.Drawing.Size(73, 42);
             GenerealSettingButtonAD.TabIndex = 6;
             GenerealSettingButtonAD.UseVisualStyleBackColor = true;
             GenerealSettingButtonAD.Click += GenerealSettingButtonAD_Click;
@@ -144,7 +115,7 @@
             LogOutButtonAD.FlatAppearance.BorderSize = 0;
             LogOutButtonAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             LogOutButtonAD.ForeColor = System.Drawing.Color.White;
-            LogOutButtonAD.Location = new System.Drawing.Point(1191, 792);
+            LogOutButtonAD.Location = new System.Drawing.Point(1192, 801);
             LogOutButtonAD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             LogOutButtonAD.Name = "LogOutButtonAD";
             LogOutButtonAD.Size = new System.Drawing.Size(102, 37);
@@ -156,17 +127,26 @@
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
+            panel1.Controls.Add(label7);
             panel1.Controls.Add(EmployeeInformationButtonAD);
-            panel1.Controls.Add(GuestReportButtonAD);
-            panel1.Controls.Add(OccupancyRateButtonAD);
             panel1.Controls.Add(GenerealSettingButtonAD);
             panel1.Controls.Add(RoomInformationButtonAD);
-            panel1.Controls.Add(RevenueReportButtonAD);
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(1323, 101);
             panel1.TabIndex = 8;
             panel1.Paint += panel1_Paint;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label7.ForeColor = System.Drawing.Color.White;
+            label7.Location = new System.Drawing.Point(40, 33);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(198, 37);
+            label7.TabIndex = 7;
+            label7.Text = "DASHBOARD";
             // 
             // panel2
             // 
@@ -175,9 +155,9 @@
             panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label1);
-            panel2.Location = new System.Drawing.Point(475, 160);
+            panel2.Location = new System.Drawing.Point(696, 461);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(388, 315);
+            panel2.Size = new System.Drawing.Size(598, 315);
             panel2.TabIndex = 9;
             // 
             // label5
@@ -220,9 +200,9 @@
             panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             panel4.Controls.Add(label6);
             panel4.Controls.Add(label2);
-            panel4.Location = new System.Drawing.Point(906, 160);
+            panel4.Location = new System.Drawing.Point(696, 124);
             panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(387, 315);
+            panel4.Size = new System.Drawing.Size(598, 315);
             panel4.TabIndex = 10;
             // 
             // label6
@@ -254,9 +234,9 @@
             panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
-            panel3.Location = new System.Drawing.Point(40, 160);
+            panel3.Location = new System.Drawing.Point(29, 124);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(388, 315);
+            panel3.Size = new System.Drawing.Size(601, 315);
             panel3.TabIndex = 11;
             // 
             // label4
@@ -278,6 +258,7 @@
             ClientSize = new System.Drawing.Size(1323, 868);
             Controls.Add(panel3);
             Controls.Add(panel4);
+            Controls.Add(RevenueReportButtonAD);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(LogOutButtonAD);
@@ -289,6 +270,7 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Load += AdminDashboard_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel4.ResumeLayout(false);
@@ -299,9 +281,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button OccupancyRateButtonAD;
         private System.Windows.Forms.Button RevenueReportButtonAD;
-        private System.Windows.Forms.Button GuestReportButtonAD;
         private System.Windows.Forms.Button RoomInformationButtonAD;
         private System.Windows.Forms.Button EmployeeInformationButtonAD;
         private System.Windows.Forms.Button GenerealSettingButtonAD;
@@ -316,5 +296,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
     }
 }

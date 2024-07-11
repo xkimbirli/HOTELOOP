@@ -23,9 +23,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Update="RoomIn forms Edit Form\DeluxeRomRoomInfoEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Booking List\DeluxeRoomBookedListTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -34,13 +31,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Booking List\StandardRoomBookedListTab.cs" />
-    <Compile Update="RoomIn forms Edit Form\StandardRoomInfoEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Booking List\SuiteRoomBookedListTab.cs" />
-    <Compile Update="RoomIn forms Edit Form\SuiteRoomInfoEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FastReport.Compat" Version="2024.2.11" />

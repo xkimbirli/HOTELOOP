@@ -42,12 +42,9 @@
             MenuDashboardButtonBP = new System.Windows.Forms.Button();
             MenuRoomInfoButtonBP = new System.Windows.Forms.Button();
             pictureBox2 = new System.Windows.Forms.PictureBox();
-            monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // DisplayPanelBP
@@ -56,7 +53,7 @@
             DisplayPanelBP.Location = new System.Drawing.Point(21, 127);
             DisplayPanelBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             DisplayPanelBP.Name = "DisplayPanelBP";
-            DisplayPanelBP.Size = new System.Drawing.Size(966, 703);
+            DisplayPanelBP.Size = new System.Drawing.Size(1272, 703);
             DisplayPanelBP.TabIndex = 3;
             DisplayPanelBP.Paint += DisplayPanelBP_Paint;
             // 
@@ -156,7 +153,7 @@
             AddBookingbuttonBP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             AddBookingbuttonBP.Font = new System.Drawing.Font("Century Schoolbook", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             AddBookingbuttonBP.ForeColor = System.Drawing.Color.White;
-            AddBookingbuttonBP.Location = new System.Drawing.Point(883, 88);
+            AddBookingbuttonBP.Location = new System.Drawing.Point(1190, 88);
             AddBookingbuttonBP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             AddBookingbuttonBP.Name = "AddBookingbuttonBP";
             AddBookingbuttonBP.Size = new System.Drawing.Size(94, 31);
@@ -241,32 +238,12 @@
             // 
             pictureBox2.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Location = new System.Drawing.Point(1039, 26);
+            pictureBox2.Location = new System.Drawing.Point(1083, 12);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(227, 143);
+            pictureBox2.Size = new System.Drawing.Size(201, 66);
             pictureBox2.TabIndex = 13;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
-            // 
-            // monthCalendar1
-            // 
-            monthCalendar1.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
-            monthCalendar1.ForeColor = System.Drawing.SystemColors.WindowText;
-            monthCalendar1.Location = new System.Drawing.Point(1021, 181);
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.RightToLeftLayout = true;
-            monthCalendar1.TabIndex = 14;
-            monthCalendar1.TrailingForeColor = System.Drawing.Color.FromArgb(148, 118, 95);
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(61, 41, 31);
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new System.Drawing.Point(1003, 420);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new System.Drawing.Size(296, 410);
-            dataGridView1.TabIndex = 15;
             // 
             // BookingPage
             // 
@@ -274,8 +251,6 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
             ClientSize = new System.Drawing.Size(1323, 868);
-            Controls.Add(dataGridView1);
-            Controls.Add(monthCalendar1);
             Controls.Add(pictureBox2);
             Controls.Add(panel3);
             Controls.Add(MenuRoomInfoButtonBP);
@@ -294,7 +269,6 @@
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -312,7 +286,5 @@
         private System.Windows.Forms.Button DeluxeRoomTabBP;
         private System.Windows.Forms.Button MenuRoomInfoButtonBP;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

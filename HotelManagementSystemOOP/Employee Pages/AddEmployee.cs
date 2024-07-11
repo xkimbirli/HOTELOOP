@@ -80,13 +80,13 @@ namespace HotelManagementSystemOOP
                         // Debug message to confirm database connection
                         Console.WriteLine("Database connected.");
 
-                        cmd.CommandText = "INSERT INTO Employee(Name, Sex, Birthdate, Age, ContactNumber, EmailAddress, Address, Username, Password, Position, DateHire, ShiftSchedule, EmployeeProfile) " +
-                                          "VALUES (@name, @sex, @birthdate, @age, @contactnumber, @emailaddress, @address, @username, @password, @position, @datehire, @shiftschedule, @employeeprofile)";
+                        cmd.CommandText = "INSERT INTO Employee(Name, Sex, Birthdate, ContactNumber, EmailAddress, Address, Username, Password, Position, DateHire, ShiftSchedule, EmployeeProfile) " +
+                                          "VALUES (@name, @sex, @birthdate, @contactnumber, @emailaddress, @address, @username, @password, @position, @datehire, @shiftschedule, @employeeprofile)";
 
                         cmd.Parameters.AddWithValue("@name", EmployeeNameAE.Text);
                         cmd.Parameters.AddWithValue("@sex", SexDropdownAe.Text);
                         cmd.Parameters.AddWithValue("@birthdate", BirtDateAE.Text);
-                        cmd.Parameters.AddWithValue("@age", AgeAE.Text);
+                       // cmd.Parameters.AddWithValue("@age", AgeAE.Text);
                         cmd.Parameters.AddWithValue("@contactnumber", ContactNumberAE.Text);
                         cmd.Parameters.AddWithValue("@emailaddress", EmailAddAE.Text);
                         cmd.Parameters.AddWithValue("@address", AddressAE.Text);

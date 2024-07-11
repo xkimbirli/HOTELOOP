@@ -142,7 +142,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label8.Location = new System.Drawing.Point(38, 453);
+            label8.Location = new System.Drawing.Point(47, 440);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(182, 21);
             label8.TabIndex = 9;
@@ -152,7 +152,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label9.Location = new System.Drawing.Point(86, 484);
+            label9.Location = new System.Drawing.Point(69, 476);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(53, 20);
             label9.TabIndex = 10;
@@ -178,7 +178,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(ExitHotelInfo);
             DoubleBuffered = true;
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "HotelInfoView";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

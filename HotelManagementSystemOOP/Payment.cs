@@ -103,7 +103,7 @@ namespace HotelManagementSystemOOP
                     try
                     {
                         // Insert payment data
-                        cmd.CommandText = "INSERT INTO Payments (BookingID, PaymentMethod, PaymentStatus) VALUES (@bookingID, @paymentMethod, @paymentStatus)";
+                        cmd.CommandText = "INSERT INTO Payments (BookingID, PaymentMethod) VALUES (@bookingID, @paymentMethod)";
                         cmd.Parameters.AddWithValue("@bookingID", bookingID);
                         cmd.Parameters.AddWithValue("@paymentMethod", paymentMethod);
                         //  cmd.Parameters.AddWithValue("@paymentStatus", paymentStatus);

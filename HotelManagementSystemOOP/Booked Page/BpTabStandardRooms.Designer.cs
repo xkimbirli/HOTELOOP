@@ -91,7 +91,7 @@
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new System.Drawing.Size(933, 613);
+            dataGridView1.Size = new System.Drawing.Size(1239, 613);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             // 
@@ -115,7 +115,7 @@
             Controls.Add(dataGridView1);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "BpTabStandardRooms";
-            Size = new System.Drawing.Size(964, 696);
+            Size = new System.Drawing.Size(1272, 703);
             Load += BpTabStandardRooms_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

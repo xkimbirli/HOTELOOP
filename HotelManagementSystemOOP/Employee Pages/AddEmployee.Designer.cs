@@ -39,7 +39,6 @@
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             SexAE = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             AddressAE = new System.Windows.Forms.TextBox();
             UsernameAE = new System.Windows.Forms.TextBox();
             PasswordAE = new System.Windows.Forms.TextBox();
-            AgeAE = new System.Windows.Forms.TextBox();
             DateHireAE = new System.Windows.Forms.TextBox();
             ShiftSchedAE = new System.Windows.Forms.TextBox();
             SexDropdownAe = new System.Windows.Forms.ComboBox();
@@ -76,7 +74,7 @@
             EmployeeName.AutoSize = true;
             EmployeeName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             EmployeeName.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
-            EmployeeName.Location = new System.Drawing.Point(17, 58);
+            EmployeeName.Location = new System.Drawing.Point(12, 77);
             EmployeeName.Name = "EmployeeName";
             EmployeeName.Size = new System.Drawing.Size(65, 19);
             EmployeeName.TabIndex = 1;
@@ -87,7 +85,7 @@
             EmployeeNameAE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             EmployeeNameAE.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             EmployeeNameAE.ForeColor = System.Drawing.Color.Black;
-            EmployeeNameAE.Location = new System.Drawing.Point(181, 57);
+            EmployeeNameAE.Location = new System.Drawing.Point(178, 68);
             EmployeeNameAE.Name = "EmployeeNameAE";
             EmployeeNameAE.Size = new System.Drawing.Size(222, 28);
             EmployeeNameAE.TabIndex = 2;
@@ -109,7 +107,7 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             label2.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
-            label2.Location = new System.Drawing.Point(18, 227);
+            label2.Location = new System.Drawing.Point(12, 227);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(149, 19);
             label2.TabIndex = 4;
@@ -164,29 +162,18 @@
             SexAE.AutoSize = true;
             SexAE.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             SexAE.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
-            SexAE.Location = new System.Drawing.Point(18, 100);
+            SexAE.Location = new System.Drawing.Point(18, 124);
             SexAE.Name = "SexAE";
             SexAE.Size = new System.Drawing.Size(44, 19);
             SexAE.TabIndex = 9;
             SexAE.Text = "Sex:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-            label8.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
-            label8.Location = new System.Drawing.Point(18, 183);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(49, 19);
-            label8.TabIndex = 10;
-            label8.Text = "Age:";
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             label9.ForeColor = System.Drawing.Color.FromArgb(207, 185, 163);
-            label9.Location = new System.Drawing.Point(17, 143);
+            label9.Location = new System.Drawing.Point(18, 175);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(85, 19);
             label9.TabIndex = 11;
@@ -217,7 +204,7 @@
             // BirtDateAE
             // 
             BirtDateAE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            BirtDateAE.Location = new System.Drawing.Point(181, 140);
+            BirtDateAE.Location = new System.Drawing.Point(182, 167);
             BirtDateAE.Name = "BirtDateAE";
             BirtDateAE.Size = new System.Drawing.Size(222, 27);
             BirtDateAE.TabIndex = 14;
@@ -226,7 +213,7 @@
             // ContactNumberAE
             // 
             ContactNumberAE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            ContactNumberAE.Location = new System.Drawing.Point(181, 224);
+            ContactNumberAE.Location = new System.Drawing.Point(181, 219);
             ContactNumberAE.Name = "ContactNumberAE";
             ContactNumberAE.Size = new System.Drawing.Size(222, 27);
             ContactNumberAE.TabIndex = 15;
@@ -235,7 +222,7 @@
             // EmailAddAE
             // 
             EmailAddAE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            EmailAddAE.Location = new System.Drawing.Point(181, 273);
+            EmailAddAE.Location = new System.Drawing.Point(181, 267);
             EmailAddAE.Name = "EmailAddAE";
             EmailAddAE.Size = new System.Drawing.Size(222, 27);
             EmailAddAE.TabIndex = 16;
@@ -244,7 +231,7 @@
             // AddressAE
             // 
             AddressAE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            AddressAE.Location = new System.Drawing.Point(181, 318);
+            AddressAE.Location = new System.Drawing.Point(181, 314);
             AddressAE.Name = "AddressAE";
             AddressAE.Size = new System.Drawing.Size(222, 27);
             AddressAE.TabIndex = 17;
@@ -266,15 +253,6 @@
             PasswordAE.Size = new System.Drawing.Size(222, 27);
             PasswordAE.TabIndex = 19;
             // 
-            // AgeAE
-            // 
-            AgeAE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            AgeAE.Location = new System.Drawing.Point(181, 183);
-            AgeAE.Name = "AgeAE";
-            AgeAE.Size = new System.Drawing.Size(222, 27);
-            AgeAE.TabIndex = 20;
-            AgeAE.TextChanged += AgeAE_TextChanged;
-            // 
             // DateHireAE
             // 
             DateHireAE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -294,7 +272,7 @@
             // SexDropdownAe
             // 
             SexDropdownAe.FormattingEnabled = true;
-            SexDropdownAe.Location = new System.Drawing.Point(181, 100);
+            SexDropdownAe.Location = new System.Drawing.Point(181, 115);
             SexDropdownAe.Name = "SexDropdownAe";
             SexDropdownAe.Size = new System.Drawing.Size(219, 28);
             SexDropdownAe.TabIndex = 23;
@@ -326,7 +304,10 @@
             // 
             // ExitButtonAE
             // 
-            ExitButtonAE.BackColor = System.Drawing.Color.Transparent;
+            ExitButtonAE.BackColor = System.Drawing.Color.FromArgb(61, 41, 31);
+            ExitButtonAE.FlatAppearance.BorderSize = 0;
+            ExitButtonAE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            ExitButtonAE.ForeColor = System.Drawing.Color.White;
             ExitButtonAE.Location = new System.Drawing.Point(772, 12);
             ExitButtonAE.Name = "ExitButtonAE";
             ExitButtonAE.Size = new System.Drawing.Size(32, 29);
@@ -338,12 +319,13 @@
             // SaveEditEmployeeInfoButton
             // 
             SaveEditEmployeeInfoButton.BackColor = System.Drawing.Color.FromArgb(207, 185, 163);
+            SaveEditEmployeeInfoButton.FlatAppearance.BorderSize = 0;
             SaveEditEmployeeInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             SaveEditEmployeeInfoButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             SaveEditEmployeeInfoButton.ForeColor = System.Drawing.Color.White;
             SaveEditEmployeeInfoButton.Location = new System.Drawing.Point(703, 423);
             SaveEditEmployeeInfoButton.Name = "SaveEditEmployeeInfoButton";
-            SaveEditEmployeeInfoButton.Size = new System.Drawing.Size(94, 29);
+            SaveEditEmployeeInfoButton.Size = new System.Drawing.Size(88, 27);
             SaveEditEmployeeInfoButton.TabIndex = 27;
             SaveEditEmployeeInfoButton.Text = "SAVE";
             SaveEditEmployeeInfoButton.UseVisualStyleBackColor = false;
@@ -363,7 +345,6 @@
             Controls.Add(SexDropdownAe);
             Controls.Add(ShiftSchedAE);
             Controls.Add(DateHireAE);
-            Controls.Add(AgeAE);
             Controls.Add(PasswordAE);
             Controls.Add(UsernameAE);
             Controls.Add(AddressAE);
@@ -373,7 +354,6 @@
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
-            Controls.Add(label8);
             Controls.Add(SexAE);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -405,7 +385,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label SexAE;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -415,7 +394,6 @@
         private System.Windows.Forms.TextBox AddressAE;
         private System.Windows.Forms.TextBox UsernameAE;
         private System.Windows.Forms.TextBox PasswordAE;
-        private System.Windows.Forms.TextBox AgeAE;
         private System.Windows.Forms.TextBox DateHireAE;
         private System.Windows.Forms.TextBox ShiftSchedAE;
         private System.Windows.Forms.ComboBox SexDropdownAe;

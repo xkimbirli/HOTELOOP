@@ -91,7 +91,7 @@
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
             dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new System.Drawing.Size(933, 613);
+            dataGridView1.Size = new System.Drawing.Size(1237, 613);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -102,9 +102,9 @@
             label1.ForeColor = System.Drawing.Color.White;
             label1.Location = new System.Drawing.Point(13, 14);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(111, 34);
+            label1.Size = new System.Drawing.Size(172, 34);
             label1.TabIndex = 2;
-            label1.Text = "Deluxe";
+            label1.Text = "ALL ROOMS";
             // 
             // BpTabAllRooms
             // 
@@ -115,7 +115,7 @@
             Controls.Add(dataGridView1);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "BpTabAllRooms";
-            Size = new System.Drawing.Size(964, 696);
+            Size = new System.Drawing.Size(1272, 703);
             Load += BpTabAllRooms_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

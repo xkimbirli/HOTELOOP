@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
             ExitPayment = new System.Windows.Forms.Button();
             label3 = new System.Windows.Forms.Label();
             PaymentMethodDDP = new System.Windows.Forms.ComboBox();
             SavePayment = new System.Windows.Forms.Button();
             panel2 = new System.Windows.Forms.Panel();
-            label5 = new System.Windows.Forms.Label();
-            HotelNameP = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -120,41 +119,20 @@
             // panel2
             // 
             panel2.BackColor = System.Drawing.Color.FromArgb(148, 118, 95);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(HotelNameP);
+            panel2.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             panel2.Controls.Add(label1);
             panel2.Location = new System.Drawing.Point(22, 76);
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(548, 349);
             panel2.TabIndex = 11;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.ForeColor = System.Drawing.Color.White;
-            label5.Location = new System.Drawing.Point(17, 116);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(50, 20);
-            label5.TabIndex = 1;
-            label5.Text = "label5";
-            // 
-            // HotelNameP
-            // 
-            HotelNameP.AutoSize = true;
-            HotelNameP.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            HotelNameP.ForeColor = System.Drawing.Color.White;
-            HotelNameP.Location = new System.Drawing.Point(224, 21);
-            HotelNameP.Name = "HotelNameP";
-            HotelNameP.Size = new System.Drawing.Size(140, 27);
-            HotelNameP.TabIndex = 2;
-            HotelNameP.Text = "HotelName";
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.White;
-            label1.Location = new System.Drawing.Point(17, 70);
+            label1.Location = new System.Drawing.Point(13, 17);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(259, 27);
             label1.TabIndex = 0;
@@ -501,7 +479,6 @@
         private System.Windows.Forms.ComboBox PaymentMethodDDP;
         private System.Windows.Forms.Button SavePayment;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -528,7 +505,6 @@
         private System.Windows.Forms.Label RoomNumber;
         private System.Windows.Forms.Label CheckOutTime;
         private System.Windows.Forms.Label CheckInTime;
-        private System.Windows.Forms.Label HotelNameP;
         private System.Windows.Forms.Panel panel3;
     }
 }

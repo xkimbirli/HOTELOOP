@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using QuestPDF.Previewer;
 
 namespace HotelManagementSystemOOP
 {
@@ -21,6 +26,7 @@ namespace HotelManagementSystemOOP
             InitializeComponent();
             this.standardRoomBookedListTab = standardRoomBookedListTab;
             con = new SQLiteConnection(cs);
+            QuestPDF.Settings.License = LicenseType.Community;
         }
 
         // Constructor for Suite Room
@@ -29,6 +35,7 @@ namespace HotelManagementSystemOOP
             InitializeComponent();
             this.suiteRoombookedListTab = suiteRoombookedListTab;
             con = new SQLiteConnection(cs);
+            QuestPDF.Settings.License = LicenseType.Community;
         }
 
         // Constructor for Deluxe Room
@@ -37,6 +44,7 @@ namespace HotelManagementSystemOOP
             InitializeComponent();
             this.deluxeRoomBookedListTab = deluxeRoomBookedListTab;
             con = new SQLiteConnection(cs);
+            QuestPDF.Settings.License = LicenseType.Community;
         }
 
         public Invoice(string guestName, string guestPhoneNumber, string guestEmail, int guestKidsNum, int guestAdultNum,
@@ -44,6 +52,7 @@ namespace HotelManagementSystemOOP
         {
             InitializeComponent();
             con = new SQLiteConnection(cs);
+            QuestPDF.Settings.License = LicenseType.Community;
 
             // Set the text boxes with the passed data
             GuestName.Text = guestName;
@@ -456,5 +465,102 @@ namespace HotelManagementSystemOOP
         {
 
         }
-    }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get the necessary information for the invoice
+                string companyName = CompanyName.Text;
+                string address = Address.Text;
+                string phoneNumber = PhoneNumber.Text;
+                string email = Email.Text;
+                string guestName = GuestName.Text;
+                string guestPhoneNumber = GuestPhoneNumber.Text;
+                string guestEmail = GuestEmail.Text;
+                int guestKidsNum = int.Parse(GuestKidsNum.Text);
+                int guestAdultNum = int.Parse(GuestAdultNum.Text);
+                int bookingID = int.Parse(BookingID.Text);
+                string roomType = RoomType.Text;
+                string roomNumber = RoomNumber.Text;
+                DateTime checkInDate = DateTime.ParseExact(label13.Text, "yyyy-MM-dd", null);
+                DateTime checkOutDate = DateTime.ParseExact(CheckOutDate.Text, "yyyy-MM-dd", null);
+                string paymentStatus = PaymentStatus.Text;
+                string paymentMethod = PaymentMehod.Text;
+                decimal totalAmount = decimal.Parse(TotalAmount.Text);
+
+                // Generate the PDF
+                var document = Document.Create(container =>
+                {
+                    container.Page(page =>
+                    {
+                        page.Size(PageSizes.A4);
+                        page.Margin(2, Unit.Centimetre);
+                        page.Header().Text("Invoice").FontSize(20).Bold().AlignCenter();
+
+                        page.Content().Column(column =>
+                        {
+                            column.Spacing(10);
+                            column.Item().Row(row =>
+                            {
+                                row.RelativeItem().Column(col =>
+                                {
+                                    col.Item().Text($"Company Name: {companyName}");
+                                    col.Item().Text($"Address: {address}");
+                                    col.Item().Text($"Phone: {phoneNumber}");
+                                    col.Item().Text($"Email: {email}");
+                                });
+
+                                row.RelativeItem().Column(col =>
+                                {
+                                    col.Item().Text($"Guest Name: {guestName}");
+                                    col.Item().Text($"Guest Phone: {guestPhoneNumber}");
+                                    col.Item().Text($"Guest Email: {guestEmail}");
+                                    col.Item().Text($"Kids: {guestKidsNum}");
+                                    col.Item().Text($"Adults: {guestAdultNum}");
+                                });
+                            });
+
+                            column.Item().Column(col =>
+                            {
+                                col.Item().Text($"Booking ID: {bookingID}");
+                                col.Item().Text($"Room Type: {roomType}");
+                                col.Item().Text($"Room Number: {roomNumber}");
+                                col.Item().Text($"Check-in Date: {checkInDate:yyyy-MM-dd}");
+                                col.Item().Text($"Check-out Date: {checkOutDate:yyyy-MM-dd}");
+                            });
+
+                            column.Item().Column(col =>
+                            {
+                                col.Item().Text($"Payment Status: {paymentStatus}");
+                                col.Item().Text($"Payment Method: {paymentMethod}");
+                                col.Item().Text($"Total Amount: {totalAmount:C}");
+                            });
+                        });
+                    });
+                });
+
+                // Save the PDF to a file
+                string pdfPath = Path.Combine(Application.StartupPath, "Invoice.pdf");
+                document.GeneratePdf(pdfPath);
+                // Open the PDF after generation
+                if (File.Exists(pdfPath))
+                {
+                    // Open the PDF after generation
+                    ProcessStartInfo psi = new ProcessStartInfo
+                    {
+                        FileName = pdfPath,
+                        UseShellExecute = true
+                    };
+                    Process.Start(psi);
+                    // Notify the user
+                    MessageBox.Show("Invoice PDF generated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        }
 }

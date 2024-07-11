@@ -121,7 +121,7 @@
   <data name="MenuRoomButtonSD.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF0AAAAeCAYAAABOvRIBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAA7pJREFUaEPtmvtLU2EYx/1PLCnQrEwzk5x5Sdta2sXayMpVJv2wMqOZZdCVFZIg
+        vAAADrwBlbxySQAAA7pJREFUaEPtmvtLU2EYx/1PLCnQrEwzk5x5Sdta2sXayMpVJv2wMqOZZdCVFZIg
         XVaQ4A92oXVbRVaQtMLy0mURKETaQEZYaAZTqlnht/d950476xhn56wG7R185N37PO9zts95z7MNT5yt
         ZgNqTUuxKGUaspPiOX+BhTOmoKJIg5PVJlDfcbvX6yUTOZFndfYcnKLSpYJSHNu/RxXLstIk68Ya5pW5
         8qQftx7A+Pi4Ku46rkKXMVOyfiyRNytBnnT3m9f4+uULDlZXKsLV1cHEr8rLlKwfa8iWPjoyIhmjlJfo
@@ -143,7 +143,7 @@
   <data name="MenuBookingButtonSD.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF8AAAAfCAYAAACBFBGZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAABVlJREFUaEPtmotTVFUcx/lPTM0CJQnTdOQpCAjyEHkGCvhAERREZadUHEIoRAPJ
+        vAAADrwBlbxySQAABVlJREFUaEPtmotTVFUcx/lPTM0CJQnTdOQpCAjyEHkGCvhAERREZadUHEIoRAPJ
         DZ8IzKCzMMmEwTSNhc0UsTZiDykbjEQSNZXHsmC7vL6d34G97oXDuEsLDNuemc/ce8/v9zv38N1zf+fc
         w7VTKuJhjCJmHXydX4Obw7xpIzUhGtdqazAwMCCh6enm9SL/uY7XGwuQGu6NUxlxMq0l8U+kvYNId2dh
         sCU5kXUQw0NDUCRtQbSfhwz1t9/gwf17CHFbLoyd6wStXILcXeFy8QvSY+A3zaOdqL1SiZbfmoU2A5lp
@@ -172,7 +172,7 @@
   <data name="MenuDashboardButtonSD.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF8AAAAfCAYAAACBFBGZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAABIRJREFUaEPtmv9PG2Ucx/lP2JzTgDgCKpmupawDS7BsE0sJ5duCsGRzjCGDGPAH
+        vAAADrwBlbxySQAABIRJREFUaEPtmv9PG2Ucx/lP2JzTgDgCKpmupawDS7BsE0sJ5duCsGRzjCGDGPAH
         p8RVUZJJJc5lBshU1NhkCRnbyBrmhmAMCYYmJCUkiFgXyOZaRFokeft8nnLt3XGsV9dusdwneeWe6+d5
         7rm8nqdPr+2T4mitgZyuJhvaasxoLD2A+mI9aov2acRAnVmHBosRb1UV4YOGsk1+BSTyPzplQ2V+DvRp
         qRpxpES3B+8ft0jEE2H5zTYTjHt2KTbWeHgM6Ttw7LAB3S3VUvknLQcUG2jEn4qCnIj8M/WvKlaSc/mb
